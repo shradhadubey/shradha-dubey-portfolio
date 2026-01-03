@@ -1,0 +1,85 @@
+{
+    "name": "SHRADHA DUBEY",
+    "location": "Indore, India",
+    "email": "shradha.dubeyy@gmail.com",
+    "phone": "+91 97134-21112",
+    "links": "LinkedIn | Open to Relocation",
+    "summary": "Big Data Engineer with over 6 years of experience designing and optimizing scalable data solutions, including AWS cloud architecture and big data engineering. Expertise in AWS (S3, EMR, Glue), Pyspark, SQL, and Python, with a strong track record of building efficient ETL pipelines and reducing operational costs.",
+    "certifications": [
+        "AWS Solution Architect Associate (SAA-02)",
+        "AWS Cloud Practitioner (CLF-C01)",
+        "Certification of Advance Studies in Data Science"
+    ],
+    "skills": {
+        "Big Data & ETL": ["Data Pipelines", "Data Modeling", "Real-Time Streaming", "Data Governance", "Python", "SQL", "Scala", "HQL"],
+        "Cloud Technologies": ["AWS (S3, EC2, EMR, Glue Catalog, Redshift, Lambda, SNS, KMS, IAM, CloudWatch)"],
+        "Big Data Tools": ["Apache Hadoop", "Spark", "Hive", "Kafka", "Nifi", "Oozie", "Zeppelin"],
+        "Visualization": ["Tableau", "Power BI", "Google Analytics", "Adobe Analytics"],
+        "Documentation": ["GitHub", "SharePoint", "Confluence", "TFS"],
+        "Collaboration": ["Stakeholder Management", "Performance Optimization", "Agile", "DevOps"]
+    },
+    "experience": [
+        {
+            "role": "AWS Data Engineer",
+            "company": "Melius Infotech, Hyderabad, India",
+            "duration": "Jan 25 - Current",
+            "achievements": [
+                "Designed and implemented scalable AWS cloud architectures, ensuring high availability, security, and cost efficiency.",
+                "Developed automated ELT pipelines using AWS Glue, Lambda, and Redshift, optimizing data ingestion & transformation.",
+                "Architected serverless data processing solutions leveraging AWS Step Functions and S3, reducing infrastructure overhead.",
+                "Led cloud migration strategies, integrating AWS services like EC2 & DynamoDB for enhanced scalability and performance.",
+                "Established IAM policies and security best practices, ensuring compliance with AWS security standards."
+            ]
+        },
+        {
+            "role": "Big Data Engineer",
+            "company": "Rocket Mortgage, Detroit, Michigan",
+            "duration": "Jun 21 - Sept 24",
+            "achievements": [
+                "Built AWS-based data pipelines, reducing data processing time by 15%, enabling real-time insights.",
+                "Optimized data lake storage and query performance through EMR & Glue, reducing storage costs by 20%.",
+                "Built automated data workflows & ETL pipelines, integrating data into a centralized data lake.",
+                "Developed data models and data marts, improving query efficiency by 25%.",
+                "Collaborated with cross-functional teams to implement data governance policies."
+            ]
+        },
+        {
+            "role": "Associate Big Data Engineer",
+            "company": "Rocket Mortgage, Detroit, Michigan",
+            "duration": "Dec 19 - Jun 21",
+            "achievements": [
+                "Led migration of legacy data systems to AWS, improving system scalability and reducing downtime by 10%.",
+                "Integrated deployments for CICD pipelines that helped in faster deployment of IAC and facilitated rapid testing.",
+                "Developed & optimized ETL processes for large-scale data transformations from TBs of datasets.",
+                "Worked with Spark & Hadoop ecosystems for distributed data processing, achieving 20% improvement.",
+                "Streamlined data ingestion pipelines by introducing automation that reduced manual intervention by 30%.",
+                "Executed data-profiling systems to identify inconsistencies, improving data accuracy and reliability."
+            ]
+        },
+        {
+            "role": "Data Analyst Intern",
+            "company": "Quicken Loans, Detroit, Michigan",
+            "duration": "Jun 19 - Dec 19",
+            "achievements": [
+                "Performed detailed data-analysis on large datasets, driving a 10% decrease in operation cost.",
+                "Created interactive dashboards using Tableau, reducing report generation time by 25%.",
+                "Developed custom SQL queries to analyze & retrieve data, optimizing query performance by 15%.",
+                "Partnered with business units to identify KPIs and built visualizations to track progress."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "MS in Information Management & Data Science",
+            "institution": "Syracuse University, Syracuse, New York, USA",
+            "gpa": "3.56",
+            "coursework": "Data Analytics, Data Mining, Data Modeling, Database Management, Information Visualization"
+        },
+        {
+            "degree": "PG Diploma in Computer Application",
+            "institution": "DAVV, Indore, India",
+            "gpa": "3.50",
+            "coursework": "System Analysis & Design, Web Designing, Internet & E-Commerce, HTML, CSS, C#, C++"
+        }
+    ]
+}
