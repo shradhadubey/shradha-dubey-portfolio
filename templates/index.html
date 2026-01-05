@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ profile.name }} | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@
         }
 
         .hero {
-            padding: 120px 0 60px;
+            padding: 100px 0 60px;
             text-align: center;
         }
 
@@ -32,6 +33,7 @@
             background: linear-gradient(to right, #ffffff, var(--neon-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
         .section-header {
@@ -89,8 +91,12 @@
             text-transform: uppercase;
             font-size: 0.75rem;
             display: inline-block;
+            text-decoration: none;
+            border: none;
         }
 
+        .modal-body img { max-height: 75vh; object-fit: contain; width: 100%; }
+        .cert-badge:hover { filter: brightness(1.2); transform: translateY(-2px); transition: 0.2s; }
         .text-dim { color: var(--text-dim); }
     </style>
 </head>
@@ -99,9 +105,30 @@
 <div class="container">
     <header class="hero">
         <h1>{{ profile.name }}</h1>
-        <p class="text-dim fs-5 mb-5">{{ profile.summary }}</p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-            {% for cert in profile.certifications %}<span class="cert-badge">{{ cert }}</span>{% endfor %}
+        <p class="lead text-dim mx-auto" style="max-width: 850px; font-size: 1.25rem;">
+            {{ profile.summary }}
+        </p>
+        
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            {% for cert in profile.certifications %}
+                <button class="cert-badge" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal{{ loop.index }}">
+                    {{ cert.name }}
+                </button>
+
+                <div class="modal fade" id="certModal{{ loop.index }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content bg-dark border-info" style="border: 1px solid #00f2ff;">
+                            <div class="modal-header border-secondary">
+                                <h5 class="modal-title text-white">{{ cert.name }}</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img src="{{ url_for('static', filename=cert.image) }}" class="img-fluid rounded shadow" alt="{{ cert.name }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </header>
 
@@ -110,7 +137,7 @@
             <h2 class="section-header">Expertise</h2>
             {% for category, items in profile.skills.items() %}
                 <div class="mb-4">
-                    <h6 class="fw-bold mb-3">{{ category }}</h6>
+                    <h6 class="fw-bold mb-3" style="color: var(--neon-blue)">{{ category }}</h6>
                     <div class="d-flex flex-wrap">
                         {% for item in items %}<span class="skill-pill">{{ item }}</span>{% endfor %}
                     </div>
@@ -139,6 +166,8 @@
 <footer class="text-center py-5 mt-5 border-top border-secondary">
     <p class="text-dim small">&copy; 2026 {{ profile.name }} | Big Data & AWS Engineering</p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
