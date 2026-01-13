@@ -4,7 +4,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 def load_profile():
-    with open('data.json', 'r') as f:
+    with open('profile.json', 'r') as f:
         return json.load(f)
 
 @app.route('/')

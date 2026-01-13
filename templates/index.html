@@ -6,15 +6,15 @@
     <title>{{ profile.name }} | Data Engineering Portfolio</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-deep: #050a14;  
-            --card-glass: rgba(20, 30, 50, 0.7);
+            --bg-deep: #030712;  
+            --card-glass: rgba(17, 24, 39, 0.7);
             --neon-blue: #00f2ff;
-            --text-white: #ffffff;
+            --text-white: #f8fafc;
             --text-dim: #94a3b8;
         }
 
@@ -22,101 +22,84 @@
             background-color: var(--bg-deep);
             color: var(--text-white);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 40%);
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(0, 242, 255, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 100% 100%, rgba(0, 114, 255, 0.05) 0%, transparent 30%);
             min-height: 100vh;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 800;
             background: linear-gradient(to right, #ffffff, var(--neon-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
         }
 
-        /* Buttons & Badges */
+        /* Glass Card Effect */
+        .custom-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .custom-card:hover {
+            border-color: rgba(0, 242, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+        }
+
+        /* Button Grouping Fix */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .btn-base {
+            height: 48px;
+            padding: 0 24px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
         .cert-badge {
             background: linear-gradient(45deg, #00f2ff, #0072ff);
             color: #000 !important;
-            font-weight: 800;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
             border: none;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
         }
 
         .social-link {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.03);
             color: var(--neon-blue) !important;
-            border: 1px solid var(--neon-blue);
-            padding: 11px 24px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
+            border: 1px solid rgba(0, 242, 255, 0.3);
         }
 
-        .cert-badge:hover, .social-link:hover {
-            filter: brightness(1.2);
+        .btn-base:hover {
             transform: translateY(-3px);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 48px; /* Forces all buttons to be the exact same height */
-            white-space: nowrap; /* Prevents text from breaking inside the button */
-            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
-        }
-        
-        .social-link {
-            background: transparent;
-            color: var(--neon-blue);
-            border: 1px solid var(--neon-blue);
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 48px; /* Forces all buttons to be the exact same height */
-            white-space: nowrap; /* Prevents text from breaking inside the button */
+            filter: brightness(1.1);
+            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
         }
 
-        .social-link:hover {
-            background: rgba(0, 242, 255, 0.1);
-            color: white;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
-        }
-
-        /* Content Layout */
         .section-header {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: var(--neon-blue);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             display: flex;
             align-items: center;
         }
@@ -129,92 +112,61 @@
             margin-left: 20px;
         }
 
-        .custom-card {
-            background: var(--card-glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 24px;
-            transition: 0.3s ease;
-        }
-
         .skill-pill {
-            background: rgba(0, 242, 255, 0.1);
+            background: rgba(0, 242, 255, 0.05);
             color: var(--neon-blue);
-            border: 1px solid rgba(0, 242, 255, 0.3);
-            border-radius: 50px;
-            padding: 6px 16px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin: 4px;
-        }
-
-        /* Modals */
-        .modal-content {
-            background: #0f172a;
-            border: 1px solid var(--neon-blue);
-        }
-        .modal-body img { 
-            max-height: 75vh; 
-            object-fit: contain; 
-            width: 100%; 
-            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header class="hero">
-        <h1>{{ profile.name }}</h1>
-        <p class="lead text-muted mx-auto" style="max-width: 850px; color: var(--text-dim) !important;">
+    <header class="hero text-center py-5 mt-5">
+        <h1 class="mb-3">{{ profile.name }}</h1>
+        <p class="lead mx-auto mb-4" style="max-width: 700px; color: var(--text-dim);">
             {{ profile.summary }}
         </p>
         
-    <div class="mt-4"></div>    
-        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        <div class="action-buttons">
             {% for cert in profile.certifications %}
-                <button class="cert-badge" data-bs-toggle="modal" data-bs-target="#certModal{{ loop.index }}">
+                <button class="btn-base cert-badge" data-bs-toggle="modal" data-bs-target="#certModal{{ loop.index }}">
                     <i class="fas fa-certificate me-2"></i>{{ cert.name }}
                 </button>
-
-                <div class="modal fade" id="certModal{{ loop.index }}" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header border-secondary">
-                                <h5 class="modal-title text-white">{{ cert.name }}</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body text-center p-4">
-                                <img src="{{ url_for('static', filename=cert.image) }}" class="img-fluid" alt="{{ cert.name }}">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             {% endfor %}
-    </div>
 
-            <a href="{{ url_for('static', filename=profile.resume_file) }}" 
-                download="Shradha_Dubey_Resume.pdf" 
-                class="social-link" 
-                style="background: rgba(0, 242, 255, 0.1);">
-                <i class="fas fa-file-download"></i> Download CV
+            <a href="{{ url_for('static', filename=profile.resume_file) }}" class="btn-base social-link">
+                <i class="fas fa-file-download me-2"></i> CV
             </a>
-
-            <a href="{{ profile.linkedin }}" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
+            <a href="{{ profile.linkedin }}" target="_blank" class="btn-base social-link">
+                <i class="fab fa-linkedin me-2"></i> LinkedIn
             </a>
         </div>
     </header>
 
+    {% for cert in profile.certifications %}
+    <div class="modal fade" id="certModal{{ loop.index }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-info">
+                <div class="modal-body p-0">
+                    <img src="{{ url_for('static', filename=cert.image) }}" class="img-fluid rounded" alt="{{ cert.name }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
     <div class="row mt-5">
         <div class="col-lg-4">
-            <h2 class="section-header">Expertise</h2>
+            <h2 class="section-header">Technical Stack</h2>
             {% for category, items in profile.skills.items() %}
                 <div class="mb-4">
-                    <h6 class="fw-bold mb-3" style="color: var(--neon-blue)">{{ category }}</h6>
+                    <h6 class="fw-bold mb-3 text-white-50">{{ category }}</h6>
                     <div class="d-flex flex-wrap">
                         {% for item in items %}
                             <span class="skill-pill">{{ item }}</span>
@@ -225,15 +177,19 @@
         </div>
 
         <div class="col-lg-8">
-            <h2 class="section-header">Work History</h2>
+            <h2 class="section-header">Experience</h2>
             {% for job in profile.experience %}
                 <div class="custom-card">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <h4 class="fw-bold m-0 text-white">{{ job.role }}</h4>
-                        <span class="badge rounded-pill bg-dark border border-info text-info p-2">{{ job.duration }}</span>
+                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                        <div>
+                            <h4 class="fw-bold mb-1">{{ job.role }}</h4>
+                            <p class="mb-0" style="color: var(--neon-blue)">{{ job.company }}</p>
+                        </div>
+                        <span class="badge rounded-pill px-3 py-2" style="background: rgba(0, 242, 255, 0.1); color: var(--neon-blue); border: 1px solid var(--neon-blue);">
+                            {{ job.duration }}
+                        </span>
                     </div>
-                    <p class="fw-bold mb-3" style="color: #60a5fa">{{ job.company }}</p>
-                    <ul style="color: var(--text-dim); font-size: 0.95rem; padding-left: 1.2rem;">
+                    <ul class="ps-3" style="color: var(--text-dim); line-height: 1.8;">
                         {% for achievement in job.achievements %}
                             <li class="mb-2">{{ achievement }}</li>
                         {% endfor %}
@@ -244,11 +200,12 @@
     </div>
 </div>
 
-<footer class="text-center py-5 mt-5 border-top border-secondary" style="background: rgba(0,0,0,0.2);">
-    <p style="color: var(--text-dim);">&copy; 2026 {{ profile.name }} | Built with Flask & AWS Pride</p>
+<footer class="text-center py-5 mt-5 border-top border-white-10">
+    <p class="small" style="color: var(--text-dim);">
+        &copy; 2026 {{ profile.name }} | Designed for high-performance data engineering
+    </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

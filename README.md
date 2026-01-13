@@ -20,12 +20,18 @@ A dynamic, high-performance portfolio website for **Shradha Dubey**, a Big Data 
 
 ```text
 shradha-dubey-portfolio/
+
 ├── app.py              # Flask application logic
-├── data.json           # Centralized resume data (Skills, Experience, etc.)
-├── requirements.txt    # Python dependencies (Flask, Gunicorn)
+├── profile.json        # Keep your profile data here to keep app.py clean
 ├── .gitignore          # Prevents venv and cache from being uploaded
-├── templates/
-│   └── index.html      # Responsive Jinja2 template
+├── static/             # Centralized resume data (Skills, Experience, etc.)
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── resume/
+├── templates/          # Responsive Jinja2 template
+|   └── index.html
+├── requirements.txt
 └── venv/               # Local virtual environment (ignored by git)
 
 ```
