@@ -23,6 +23,7 @@ shradha-dubey-portfolio/
 
 ├── app.py              # Flask application logic
 ├── profile.json        # Keep your profile data here to keep app.py clean
+├── vercel.json         # The bridge 
 ├── .gitignore          # Prevents venv and cache from being uploaded
 ├── static/             # Centralized resume data (Skills, Experience, etc.)
 │   ├── css/
