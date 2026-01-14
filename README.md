@@ -1,20 +1,22 @@
 # AWS Data Engineering Portfolio
 
 A dynamic, high-performance portfolio website for **Shradha Dubey**, a Big Data Engineer with 6+ years of experience. This project showcases a modern tech stack and is designed for seamless deployment on cloud platforms like Render or PythonAnywhere.
+https://shradha-dubey-portfolio-jb1zy44fa-shradhadubeys-projects.vercel.app/
 
-## 🚀 Features
+## System Design Patterns
+In this portfolio and my featured projects, I implement the following Data Engineering principles:
+- **Idempotency:** Ensuring pipelines can be re-run without duplicating data.
+- **Data Quality:** Implementing automated checks (Great Expectations/Dequy) during the Bronze-to-Silver transition.
+- **Scalability:** Leveraging distributed computing (Spark) for high-volume transformations.
 
-* **Dynamic Data Rendering**: Powered by a centralized `data.json` for easy updates without modifying code.
-* **Modern Dark UI**: Features a "Glassmorphism" aesthetic with high-visibility neon accents for better readability.
-* **Mobile Responsive**: Built using Bootstrap 5 to ensure a professional look on all devices.
-* **Production Ready**: Configured for deployment with Gunicorn and absolute path handling.
+### Tech Stack
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache%20Spark-FDEE21?style=for-the-badge&logo=apachespark&logoColor=black)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-## 🛠️ Tech Stack
-
-* **Backend**: Python / Flask
-* **Frontend**: HTML5, CSS3, Jinja2 Templates
-* **Styling**: Bootstrap 5 + Custom Glassmorphism CSS
-* **Deployment**: Render / Gunicorn
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=shradhadubey&theme=tokyonight)](https://git.io/streak-stats)
 
 ## 📂 Project Structure
 
