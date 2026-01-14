@@ -1,7 +1,7 @@
 # AWS Data Engineering Portfolio
 
 A dynamic, high-performance portfolio website for **Shradha Dubey**, a Big Data Engineer with 6+ years of experience. This project showcases a modern tech stack and is designed for seamless deployment on cloud platforms like Render or PythonAnywhere.
-https://shradha-dubey-portfolio-jb1zy44fa-shradhadubeys-projects.vercel.app/
+https://shradhadubey.vercel.app/
 
 ## System Design Patterns
 In this portfolio and my featured projects, I implement the following Data Engineering principles:
