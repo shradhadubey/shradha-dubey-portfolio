@@ -1,16 +1,16 @@
-import json
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
-def load_profile():
-    with open('profile.json', 'r') as f:
-        return json.load(f)
+# This is required for Vercel to find the "app" object
+app = app 
 
 @app.route('/')
-def home():
-    data = load_profile()
-    return render_template('index.html', profile=data)
+def index():
+    # ... your existing logic ...
+    return render_template('index.html', profile=profile_data)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Only for local testing; Vercel ignores this
+if __name__ == "__main__":
+    app.run()
