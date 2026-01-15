@@ -18,28 +18,47 @@ In this portfolio and my featured projects, I implement the following Data Engin
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=shradhadubey&theme=tokyonight)](https://git.io/streak-stats)
 
-## 📂 Project Structure
+---
+##  Technical Highlights
+
+### 1. Automated Data Quality (DQ) Pipeline
+I implemented a "Genuine Streak" automation using **GitHub Actions**. Every 24 hours, a Python-based worker validates the integrity of the `profile.json` source file.
+- **Validation Logic:** Ensures schema consistency and mandatory field presence (e.g., role, experience).
+- **Automated Observability:** If the JSON is corrupted, the pipeline fails, preventing "bad data" from reaching the production UI.
+
+### 2. Cloud-Native Deployment
+- **Serverless Architecture:** Hosted on Vercel using the `@vercel/python` runtime.
+- **Dynamic Routing:** Custom `vercel.json` configuration to handle static asset routing for nested directories (like `/static/resume/`).
+
+### 3. Modern UX Features
+- **Persistence Layer:** Dark mode toggle utilizing browser `localStorage` to persist user theme preferences across sessions.
+- **Responsive Design:** Mobile-first UI architecture.
+
+---
+
+##  Project Structure
 
 ```text
 shradha-dubey-portfolio/
-
-├── app.py              # Flask application logic
-├── profile.json        # Keep your profile data here to keep app.py clean
-├── vercel.json         # The bridge 
-├── .gitignore          # Prevents venv and cache from being uploaded
-├── static/             # Centralized resume data (Skills, Experience, etc.)
+├── .github/workflows/        # CI/CD & Data Validation Pipelines
+├── app.py                    # Flask application logic
+├── check_data_quality.py     # Python Data Validation Script
+├── profile.json              # Keep your profile data here to keep app.py clean
+├── vercel.json               # The bridge 
+├── .gitignore                # Prevents venv and cache from being uploaded
+├── static/                   # Centralized resume data (Skills, Experience, etc.)
 │   ├── css/
 │   ├── js/
 │   ├── images/
 │   └── resume/
-├── templates/          # Responsive Jinja2 template
+├── templates/                 # Responsive Jinja2 HTML Templates
 |   └── index.html
 ├── requirements.txt
-└── venv/               # Local virtual environment (ignored by git)
+└── venv/                      # Local virtual environment (ignored by git)
 
 ```
 
-## ⚙️ Local Setup
+## Local Setup
 
 1. **Clone the repository**:
 ```bash
@@ -73,7 +92,7 @@ python app.py
 
 Visit `http://127.0.0.1:5000` in your browser.
 
-## 🌐 Deployment
+## Deployment
 
 This project is configured for **Render**. To deploy:
 
