@@ -2,8 +2,12 @@ name: Daily Data Health Check
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
-  workflow_dispatch: # Allows you to run it manually for testing
+    - cron: '0 0 * * *' 
+  workflow_dispatch: 
+
+# ADD THIS SECTION:
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -11,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true # Ensures we can push back
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,6 +30,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          # Touch the file to ensure there's a change even if data is the same
+          date >> data_health_log.txt 
           git add data_health_log.txt
-          git commit -m "Automated Data Health Check: $(date)"
+          git commit -m "Automated Data Health Check: $(date)" || echo "No changes to commit"
           git push
