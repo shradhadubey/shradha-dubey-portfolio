@@ -55,86 +55,54 @@
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
         }
 
-        /* Medallion Dashboard Container */
+        /* Medallion Dashboard */
         .architecture-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin-top: 2rem;
-            position: relative;
+            margin-top: 20px;
         }
 
-        /* Individual Tier Cards */
         .arch-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 24px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            transition: 0.3s;
         }
 
-        .arch-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Icons & Glow Effects */
-        .arch-card i {
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
-            display: block;
-        }
-
-        /* Bronze: The Entry Point */
+        .arch-card i { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
         .bronze-card { border-bottom: 3px solid var(--bronze); }
-        .bronze-card i { color: var(--bronze); filter: drop-shadow(0 0 8px rgba(205, 127, 50, 0.4)); }
-
-        /* Silver: The Processing Hub */
+        .bronze-card i { color: var(--bronze); }
         .silver-card { border-bottom: 3px solid var(--silver); }
-        .silver-card i { color: var(--silver); filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.4)); }
-
-        /* Gold: The Analytics Peak */
+        .silver-card i { color: var(--silver); }
         .gold-card { border-bottom: 3px solid var(--gold); }
-        .gold-card i { color: var(--gold); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)); }
+        .gold-card i { color: var(--gold); }
 
-        .arch-card h5 {
-            color: var(--text-white);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+        /* Impact Metrics */
+        .impact-bar {
+            background: rgba(0, 242, 255, 0.03);
+            padding: 12px;
+            border-radius: 12px;
+            border-left: 3px solid var(--neon-blue);
+            display: flex;
+            gap: 20px;
         }
 
-        .arch-card p {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            line-height: 1.5;
-        }
+        .metric-item { display: flex; flex-direction: column; }
+        .metric-value { color: var(--neon-blue); font-weight: 800; font-size: 1rem; font-family: monospace; }
+        .metric-label { color: var(--text-dim); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Connecting Line (Desktop Only) */
-        @media (min-width: 992px) {
-            .architecture-grid::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 10%;
-                right: 10%;
-                height: 1px;
-                background: linear-gradient(to right, transparent, var(--text-dim), transparent);
-                z-index: 0;
-                opacity: 0.2;
-            }
-        }
-        /* Button & UI Elements */
+        /* UI Elements */
+        .section-header { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--neon-blue); margin-bottom: 40px; display: flex; align-items: center; }
+        .section-header::after { content: ""; height: 1px; background: linear-gradient(to right, var(--neon-blue), transparent); flex-grow: 1; margin-left: 20px; }
+        .skill-pill { background: rgba(0, 242, 255, 0.05); color: var(--neon-blue); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 8px; padding: 4px 12px; font-size: 0.75rem; margin: 4px; display: inline-block; }
+        
         .action-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
         .btn-base { height: 48px; padding: 0 24px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-decoration: none; }
         .cert-badge { background: linear-gradient(45deg, #00f2ff, #0072ff); color: #000 !important; border: none; }
         .social-link { background: rgba(255, 255, 255, 0.03); color: var(--neon-blue) !important; border: 1px solid rgba(0, 242, 255, 0.3); }
-        .section-header { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--neon-blue); margin-bottom: 40px; display: flex; align-items: center; }
-        .section-header::after { content: ""; height: 1px; background: linear-gradient(to right, var(--neon-blue), transparent); flex-grow: 1; margin-left: 20px; }
-        .skill-pill { background: rgba(0, 242, 255, 0.05); color: var(--neon-blue); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 8px; padding: 6px 14px; font-size: 0.8rem; font-weight: 600; margin: 4px; }
     </style>
 </head>
 <body>
@@ -161,18 +129,6 @@
             </a>
         </div>
     </header>
-
-    {% for cert in profile.certifications %}
-    <div class="modal fade" id="certModal{{ loop.index }}" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark border-info">
-                <div class="modal-body p-0">
-                    <img src="{{ url_for('static', filename=cert.image) }}" class="img-fluid rounded" alt="{{ cert.name }}">
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
 
     <div class="row mt-5">
         <div class="col-lg-4">
@@ -210,27 +166,48 @@
                 </div>
             {% endfor %}
 
+            <h2 class="section-header mt-5">Featured Projects</h2>
+            {% for project in profile.projects %}
+                <div class="custom-card">
+                    <h4 class="fw-bold mb-2">{{ project.title }}</h4>
+                    <p class="text-dim mb-3">{{ project.description }}</p>
+                    
+                    <div class="impact-bar mb-3">
+                        {% for metric in project.impact_metrics %}
+                        <div class="metric-item">
+                            <span class="metric-value">{{ metric.value }}</span>
+                            <span class="metric-label">{{ metric.label }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="tech-tags">
+                        {% for t in project.tech %}
+                        <span class="skill-pill">{{ t }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+
             <h2 class="section-header mt-5">Data Strategy</h2>
             <div class="custom-card">
-                <p class="text-center text-dim mb-4">I implement the <strong>Medallion Architecture</strong> to ensure data reliability and business value.</p>
+                <p class="text-center text-dim mb-4">Implementation of the <strong>Medallion Architecture</strong> for data integrity.</p>
                 <div class="architecture-grid">
                     <div class="arch-card bronze-card">
                         <i class="fas fa-layer-group"></i>
                         <h5>Bronze</h5>
-                        <p><strong>Ingestion:</strong> Raw data landing from APIs & streaming logs.</p>
+                        <p class="small">Raw Ingestion</p>
                     </div>
-
                     <div class="arch-card silver-card">
                         <i class="fas fa-microchip"></i>
                         <h5>Silver</h5>
-                        <p><strong>Processing:</strong> Cleaning, deduplication, and schema validation.</p>
+                        <p class="small">Cleaned & Validated</p>
                     </div>
-
                     <div class="arch-card gold-card">
                         <i class="fas fa-gem"></i>
                         <h5>Gold</h5>
-                        <p><strong>Insight:</strong> Business-level aggregates ready for AI/BI consumption.</p>
-                </div>
+                        <p class="small">Analytics Ready</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,15 +216,12 @@
 
 <footer class="text-center py-5 mt-5 border-top border-white-10">
     <div class="health-status mb-3">
-        <img src="https://github.com/shradhadubey/shradha-dubey-portfolio/actions/workflows/daily_streak.yml/badge.svg" alt="Pipeline Health Status">
-        <p class="small mt-2" style="color: var(--text-dim);">Daily Data Validation Status</p>
+        <img src="https://github.com/shradhadubey/shradha-dubey-portfolio/actions/workflows/daily_streak.yml/badge.svg" alt="Pipeline Status">
     </div>
     <p class="small" style="color: var(--text-dim);">
-        &copy; 2026 {{ profile.name }} | Data Infrastructure: Operational
+        &copy; 2026 {{ profile.name }} | System Status: <span class="text-success">Operational</span>
     </p>
-    <small class="text-muted">
-        Last Data Sync: <span id="current-date"></span>
-    </small>
+    <small class="text-muted">Last Sync: <span id="current-date"></span></small>
 </footer>
 
 <script>

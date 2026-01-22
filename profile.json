@@ -75,14 +75,6 @@
             ]
         }
     ],
-    "Project": [
-        {
-            "title": "Cloud ETL Pipeline",
-            "description": "Built a scalable ETL pipeline to process 1M+ records daily.",
-            "tech_stack": "AWS S3, Lambda, Snowflake",
-            "impact": "Reduced data processing latency by 40%."
-    }
-    ],
     "education": [
         {
             "degree": "MS in Information Management & Data Science",
@@ -95,6 +87,19 @@
             "institution": "DAVV, Indore, India",
             "gpa": "3.50",
             "coursework": "System Analysis & Design, Web Designing, Internet & E-Commerce, HTML, CSS, C#, C++"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Cloud ETL Pipeline",
+            "description": "Real-time data ingestion system using Python and AWS.",
+            "impact_metrics": [
+                {"label": "Volume", "value": "1.2M Records/Day"},
+                {"label": "Latency", "value": "< 2 Seconds"},
+                {"label": "Uptime", "value": "99.9%"},
+                {"label": "Processing", "value": "1.2M Records/Day"}
+            ],
+            "tech": ["Python", "AWS Lambda", "S3"]
         }
     ]
 }
