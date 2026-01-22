@@ -99,7 +99,7 @@
                 {"label": "Uptime", "value": "99.9%"},
                 {"label": "Processing", "value": "1.2M Records/Day"}
             ],
-            "tech": ["Python", "AWS Lambda", "S3"]
+            "tech": ["Python", "AWS Lambda", "S3", "Athena", "Glue Catalog", "Glue ETL", "Step Functions", "CloudWatch", "IAM", "SNS"]
         }
     ]
 }
