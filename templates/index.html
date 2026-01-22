@@ -55,41 +55,78 @@
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
         }
 
-        /* Medallion Architecture Styling */
+        /* Medallion Dashboard Container */
         .architecture-grid {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 2rem;
+            position: relative;
         }
 
+        /* Individual Tier Cards */
         .arch-card {
-            flex: 1;
-            min-width: 250px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
 
-        .arch-card i { font-size: 2.5rem; margin-bottom: 15px; }
-        
-        .bronze-card { border-top: 4px solid var(--bronze); }
-        .bronze-card i { color: var(--bronze); }
-        
-        .silver-card { border-top: 4px solid var(--silver); }
-        .silver-card i { color: var(--silver); }
-        
-        .gold-card { border-top: 4px solid var(--gold); }
-        .gold-card i { color: var(--gold); }
+        .arch-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-        .arch-card h5 { font-weight: 700; margin-bottom: 10px; }
-        .arch-card p { font-size: 0.85rem; color: var(--text-dim); }
+        /* Icons & Glow Effects */
+        .arch-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
 
+        /* Bronze: The Entry Point */
+        .bronze-card { border-bottom: 3px solid var(--bronze); }
+        .bronze-card i { color: var(--bronze); filter: drop-shadow(0 0 8px rgba(205, 127, 50, 0.4)); }
+
+        /* Silver: The Processing Hub */
+        .silver-card { border-bottom: 3px solid var(--silver); }
+        .silver-card i { color: var(--silver); filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.4)); }
+
+        /* Gold: The Analytics Peak */
+        .gold-card { border-bottom: 3px solid var(--gold); }
+        .gold-card i { color: var(--gold); filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)); }
+
+        .arch-card h5 {
+            color: var(--text-white);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .arch-card p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* Connecting Line (Desktop Only) */
+        @media (min-width: 992px) {
+            .architecture-grid::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                right: 10%;
+                height: 1px;
+                background: linear-gradient(to right, transparent, var(--text-dim), transparent);
+                z-index: 0;
+                opacity: 0.2;
+            }
+        }
         /* Button & UI Elements */
         .action-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
         .btn-base { height: 48px; padding: 0 24px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-decoration: none; }
@@ -178,20 +215,22 @@
                 <p class="text-center text-dim mb-4">I implement the <strong>Medallion Architecture</strong> to ensure data reliability and business value.</p>
                 <div class="architecture-grid">
                     <div class="arch-card bronze-card">
-                        <i class="fas fa-filter-circle-dollar"></i>
+                        <i class="fas fa-layer-group"></i>
                         <h5>Bronze</h5>
-                        <p>Raw ingestion & landing zone</p>
+                        <p><strong>Ingestion:</strong> Raw data landing from APIs & streaming logs.</p>
                     </div>
+
                     <div class="arch-card silver-card">
-                        <i class="fas fa-vial-circle-check"></i>
+                        <i class="fas fa-microchip"></i>
                         <h5>Silver</h5>
-                        <p>Cleaned & validated data</p>
+                        <p><strong>Processing:</strong> Cleaning, deduplication, and schema validation.</p>
                     </div>
+
                     <div class="arch-card gold-card">
-                        <i class="fas fa-crown"></i>
+                        <i class="fas fa-gem"></i>
                         <h5>Gold</h5>
-                        <p>BI & Analytics ready</p>
-                    </div>
+                        <p><strong>Insight:</strong> Business-level aggregates ready for AI/BI consumption.</p>
+                </div>
                 </div>
             </div>
         </div>
