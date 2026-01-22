@@ -16,6 +16,9 @@
             --neon-blue: #00f2ff;
             --text-white: #f8fafc;
             --text-dim: #94a3b8;
+            --bronze: #cd7f32;
+            --silver: #c0c0c0;
+            --gold: #ffd700;
         }
 
         body {
@@ -36,7 +39,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Glass Card Effect */
         .custom-card {
             background: var(--card-glass);
             backdrop-filter: blur(12px);
@@ -53,75 +55,49 @@
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
         }
 
-        /* Button Grouping Fix */
-        .action-buttons {
+        /* Medallion Architecture Styling */
+        .architecture-grid {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 2rem;
+            margin-top: 30px;
         }
 
-        .btn-base {
-            height: 48px;
-            padding: 0 24px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .cert-badge {
-            background: linear-gradient(45deg, #00f2ff, #0072ff);
-            color: #000 !important;
-            border: none;
-        }
-
-        .social-link {
+        .arch-card {
+            flex: 1;
+            min-width: 250px;
             background: rgba(255, 255, 255, 0.03);
-            color: var(--neon-blue) !important;
-            border: 1px solid rgba(0, 242, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
         }
 
-        .btn-base:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
-            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
-        }
+        .arch-card i { font-size: 2.5rem; margin-bottom: 15px; }
+        
+        .bronze-card { border-top: 4px solid var(--bronze); }
+        .bronze-card i { color: var(--bronze); }
+        
+        .silver-card { border-top: 4px solid var(--silver); }
+        .silver-card i { color: var(--silver); }
+        
+        .gold-card { border-top: 4px solid var(--gold); }
+        .gold-card i { color: var(--gold); }
 
-        .section-header {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--neon-blue);
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-        }
+        .arch-card h5 { font-weight: 700; margin-bottom: 10px; }
+        .arch-card p { font-size: 0.85rem; color: var(--text-dim); }
 
-        .section-header::after {
-            content: "";
-            height: 1px;
-            background: linear-gradient(to right, var(--neon-blue), transparent);
-            flex-grow: 1;
-            margin-left: 20px;
-        }
-
-        .skill-pill {
-            background: rgba(0, 242, 255, 0.05);
-            color: var(--neon-blue);
-            border: 1px solid rgba(0, 242, 255, 0.2);
-            border-radius: 8px;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin: 4px;
-        }
+        /* Button & UI Elements */
+        .action-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
+        .btn-base { height: 48px; padding: 0 24px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-decoration: none; }
+        .cert-badge { background: linear-gradient(45deg, #00f2ff, #0072ff); color: #000 !important; border: none; }
+        .social-link { background: rgba(255, 255, 255, 0.03); color: var(--neon-blue) !important; border: 1px solid rgba(0, 242, 255, 0.3); }
+        .section-header { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--neon-blue); margin-bottom: 40px; display: flex; align-items: center; }
+        .section-header::after { content: ""; height: 1px; background: linear-gradient(to right, var(--neon-blue), transparent); flex-grow: 1; margin-left: 20px; }
+        .skill-pill { background: rgba(0, 242, 255, 0.05); color: var(--neon-blue); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 8px; padding: 6px 14px; font-size: 0.8rem; font-weight: 600; margin: 4px; }
     </style>
 </head>
 <body>
@@ -173,11 +149,6 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="skills-cloud">
-                    {% for skill in profile.skills.tools %}
-                        <span class="badge rounded-pill bg-primary m-1 p-2">{{ skill }}</span>
-                    {% endfor %}
-                </div>
             {% endfor %}
         </div>
 
@@ -194,55 +165,55 @@
                             {{ job.duration }}
                         </span>
                     </div>
-                    <section id="architecture" class="py-5">
-                    <div class="container">
-                        <h2 class="text-center mb-4">Core Data Architecture</h2>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <p class="lead">I specialize in building <strong>Medallion Architectures</strong> that transform raw, unstructured data into high-quality business insights.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check-circle text-success"></i> <strong>Bronze:</strong> Ingestion of raw logs & APIs.</li>
-                                    <li><i class="fas fa-check-circle text-info"></i> <strong>Silver:</strong> Cleaning, filtering, and schema enforcement.</li>
-                                    <li><i class="fas fa-check-circle text-warning"></i> <strong>Gold:</strong> Business-ready aggregates and feature engineering.</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <i class="fas fa-project-diagram fa-10x shadow-sm p-4 rounded bg-light"></i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <ul class="ps-3" style="color: var(--text-dim); line-height: 1.8;">
+                    <ul class="ps-3" style="color: var(--text-dim); line-height: 1.8;">
                         {% for achievement in job.achievements %}
                             <li class="mb-2">{{ achievement }}</li>
                         {% endfor %}
                     </ul>
                 </div>
             {% endfor %}
+
+            <h2 class="section-header mt-5">Data Strategy</h2>
+            <div class="custom-card">
+                <p class="text-center text-dim mb-4">I implement the <strong>Medallion Architecture</strong> to ensure data reliability and business value.</p>
+                <div class="architecture-grid">
+                    <div class="arch-card bronze-card">
+                        <i class="fas fa-filter-circle-dollar"></i>
+                        <h5>Bronze</h5>
+                        <p>Raw ingestion & landing zone</p>
+                    </div>
+                    <div class="arch-card silver-card">
+                        <i class="fas fa-vial-circle-check"></i>
+                        <h5>Silver</h5>
+                        <p>Cleaned & validated data</p>
+                    </div>
+                    <div class="arch-card gold-card">
+                        <i class="fas fa-crown"></i>
+                        <h5>Gold</h5>
+                        <p>BI & Analytics ready</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <footer class="text-center py-5 mt-5 border-top border-white-10">
-    <p class="small" style="color: var(--text-dim);">
-        &copy; 2026 {{ profile.name }} | Designed for high-performance data engineering
-    </p>
-    <div class="health-status">
+    <div class="health-status mb-3">
         <img src="https://github.com/shradhadubey/shradha-dubey-portfolio/actions/workflows/daily_streak.yml/badge.svg" alt="Pipeline Health Status">
-        <span>Daily Data Validation Status</span>
+        <p class="small mt-2" style="color: var(--text-dim);">Daily Data Validation Status</p>
     </div>
-    <div class="mt-4 text-center">
-        <small class="text-muted">
-            System Status: <span class="text-success">● Operational</span> | 
-            Last Data Sync: <span id="current-date"></span>
-         </small>
-    </div>
-
-        <script>
-            document.getElementById('current-date').innerText = new Date().toLocaleDateString();
-        </script>
+    <p class="small" style="color: var(--text-dim);">
+        &copy; 2026 {{ profile.name }} | Data Infrastructure: Operational
+    </p>
+    <small class="text-muted">
+        Last Data Sync: <span id="current-date"></span>
+    </small>
 </footer>
 
+<script>
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
