@@ -21,13 +21,10 @@
     }
     ],
     "skills": {
-        "Big Data & ETL": ["Data Pipelines", "Data Modeling", "Real-Time Streaming", "Data Governance", "Python", "SQL", "Scala", "HQL"],
-        "Cloud Technologies": ["AWS (S3, EC2, EMR, Glue Catalog, Redshift, Lambda, SNS, KMS, IAM, CloudWatch)"],
-        "Big Data Tools": ["Apache Hadoop", "Spark", "Hive", "Kafka", "Nifi", "Oozie", "Zeppelin"],
-        "Visualization": ["Tableau", "Power BI", "Google Analytics", "Adobe Analytics"],
-        "Documentation": ["GitHub", "SharePoint", "Confluence", "TFS"],
-        "Collaboration": ["Stakeholder Management", "Performance Optimization", "Agile", "DevOps"]
-    },
+        "languages": ["Python", "SQL", "Scala"],
+        "tools": ["Apache Spark", "Airflow", "Docker", "AWS", "dbt"],
+        "databases": ["PostgreSQL", "MongoDB", "Redshift"]
+},
     "experience": [
         {
             "role": "AWS Data Engineer",
@@ -77,6 +74,14 @@
                 "Partnered with business units to identify KPIs and built visualizations to track progress."
             ]
         }
+    ],
+    "Project": [
+        {
+            "title": "Cloud ETL Pipeline",
+            "description": "Built a scalable ETL pipeline to process 1M+ records daily.",
+            "tech_stack": "AWS S3, Lambda, Snowflake",
+            "impact": "Reduced data processing latency by 40%."
+    }
     ],
     "education": [
         {
