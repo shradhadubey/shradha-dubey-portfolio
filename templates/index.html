@@ -55,11 +55,19 @@
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
         }
 
+        /* Streak & Stats Styling */
+        .github-stats-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+        }
+
         /* Medallion Dashboard */
         .architecture-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
 
@@ -67,12 +75,11 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 24px;
+            padding: 20px;
             text-align: center;
-            transition: 0.3s;
         }
 
-        .arch-card i { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+        .arch-card i { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
         .bronze-card { border-bottom: 3px solid var(--bronze); }
         .bronze-card i { color: var(--bronze); }
         .silver-card { border-bottom: 3px solid var(--silver); }
@@ -85,16 +92,16 @@
             background: rgba(0, 242, 255, 0.03);
             padding: 12px;
             border-radius: 12px;
-            border-left: 3px solid var(--neon-blue);
+            border-left: 4px solid var(--neon-blue);
             display: flex;
-            gap: 20px;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
         .metric-item { display: flex; flex-direction: column; }
-        .metric-value { color: var(--neon-blue); font-weight: 800; font-size: 1rem; font-family: monospace; }
-        .metric-label { color: var(--text-dim); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; }
+        .metric-value { color: var(--neon-blue); font-weight: 800; font-size: 1.1rem; font-family: monospace; }
+        .metric-label { color: var(--text-dim); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* UI Elements */
         .section-header { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--neon-blue); margin-bottom: 40px; display: flex; align-items: center; }
         .section-header::after { content: ""; height: 1px; background: linear-gradient(to right, var(--neon-blue), transparent); flex-grow: 1; margin-left: 20px; }
         .skill-pill { background: rgba(0, 242, 255, 0.05); color: var(--neon-blue); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 8px; padding: 4px 12px; font-size: 0.75rem; margin: 4px; display: inline-block; }
@@ -143,6 +150,16 @@
                     </div>
                 </div>
             {% endfor %}
+
+            <h2 class="section-header mt-5">Git Activity</h2>
+            <div class="github-stats-card">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=shradhadubey&theme=tokyonight&hide_border=true" 
+                     alt="GitHub Streak" 
+                     onerror="this.onerror=null; this.src='https://streak-stats.demolab.com?user=shradhadubey&theme=tokyonight&hide_border=true';">
+                
+                <img src="https://github-readme-stats.vercel.app/api?username=shradhadubey&show_icons=true&theme=tokyonight&hide_border=true" 
+                     alt="GitHub Stats">
+            </div>
         </div>
 
         <div class="col-lg-8">
@@ -166,7 +183,7 @@
                 </div>
             {% endfor %}
 
-            <h2 class="section-header mt-5">Featured Projects</h2>
+            <h2 class="section-header mt-5">Data Engineering Projects</h2>
             {% for project in profile.projects %}
                 <div class="custom-card">
                     <h4 class="fw-bold mb-2">{{ project.title }}</h4>
@@ -221,7 +238,7 @@
     <p class="small" style="color: var(--text-dim);">
         &copy; 2026 {{ profile.name }} | System Status: <span class="text-success">Operational</span>
     </p>
-    <small class="text-muted">Last Sync: <span id="current-date"></span></small>
+    <small class="text-muted">Last Data Sync: <span id="current-date"></span></small>
 </footer>
 
 <script>
