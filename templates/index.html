@@ -55,12 +55,13 @@
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
         }
 
-        /* Streak & Stats Styling */
+        /* Fixed GitHub Stats Styling */
         .github-stats-card img {
             width: 100%;
-            border-radius: 10px;
-            margin-bottom: 10px;
+            border-radius: 12px;
+            margin-bottom: 15px;
             border: 1px solid rgba(0, 242, 255, 0.1);
+            display: block;
         }
 
         /* Medallion Dashboard */
@@ -153,9 +154,12 @@
 
             <h2 class="section-header mt-5">Git Activity</h2>
             <div class="github-stats-card">
-                <img src="https://github-readme-streak-stats.vercel.app/?user=shradhadubey&theme=tokyonight&hide_border=true&v=2" 
+                <img src="https://github-readme-streak-stats.vercel.app/?user=shradhadubey&theme=tokyonight&hide_border=true&v=3" 
                      alt="GitHub Streak" 
-                     onerror="this.src='https://streak-stats.demolab.com?user=shradhadubey&theme=tokyonight&hide_border=true'">
+                     onerror="this.onerror=null; this.src='https://streak-stats.demolab.com?user=shradhadubey&theme=tokyonight&hide_border=true';">
+                
+                <img src="https://github-readme-stats.vercel.app/api?username=shradhadubey&show_icons=true&theme=tokyonight&hide_border=true&v=3" 
+                     alt="GitHub Stats">
             </div>
         </div>
 
