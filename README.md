@@ -15,7 +15,6 @@ In this portfolio and my featured projects, I implement the following Data Engin
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Apache Spark](https://img.shields.io/badge/Apache%20Spark-FDEE21?style=for-the-badge&logo=apachespark&logoColor=black)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-[![Daily Data Health Check](https://github.com/shradhadubey/shradha-dubey-portfolio/actions/workflows/daily_streak.yml/badge.svg)](https://github.com/shradhadubey/shradha-dubey-portfolio/actions/workflows/daily_streak.yml)
 
 
 
