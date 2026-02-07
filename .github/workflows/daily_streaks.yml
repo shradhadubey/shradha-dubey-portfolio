@@ -1,22 +1,20 @@
-name: Daily Data Health Check
+name: Data Health Check (Manual)
 
 on:
-  schedule:
-    - cron: '0 0 * * *' 
-  workflow_dispatch: 
+  workflow_dispatch:
 
-# ADD THIS SECTION:
 permissions:
   contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          persist-credentials: true # Ensures we can push back
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -28,10 +26,10 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          # Touch the file to ensure there's a change even if data is the same
-          date >> data_health_log.txt 
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+
+          date >> data_health_log.txt
           git add data_health_log.txt
-          git commit -m "Automated Data Health Check: $(date)" || echo "No changes to commit"
-          git push
+          git commit -m "Manual Data Health Check: $(date)" || echo "No changes to commit"
+          git push origin HEAD:main
