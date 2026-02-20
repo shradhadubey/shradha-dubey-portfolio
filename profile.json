@@ -94,10 +94,10 @@
             "title": "Cloud ETL Pipeline",
             "description": "Real-time data ingestion system using Python and AWS.",
             "impact_metrics": [
-                {"label": "Volume", "value": "1.2M Records/Day"},
-                {"label": "Latency", "value": "< 2 Seconds"},
-                {"label": "Uptime", "value": "99.9%"},
-                {"label": "Processing", "value": "1.2M Records/Day"}
+                {"label": "Records / Day", "value": 1200000, "suffix": "+", "display": "1.2M+"},
+                {"label": "Latency (Seconds)", "value": 2, "suffix": "s", "display": "< 2s"},
+                {"label": "System Uptime", "value": 99.9, "suffix": "%", "display": "99.9%"},
+                {"label": "Storage Cost Reduction", "value": 20, "suffix": "%", "display": "20%"}
             ],
             "tech": ["Python", "AWS Lambda", "S3", "Athena", "Glue Catalog", "Glue ETL", "Step Functions", "CloudWatch", "IAM", "SNS"]
         }
