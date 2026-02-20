@@ -28,7 +28,7 @@
     "experience": [
         {
             "role": "AWS Data Engineer",
-            "company": "Melius Infotech, Hyderabad, India",
+            "profession": "Freelancer, Hyderabad, India",
             "duration": "Jan 25 - Current",
             "achievements": [
                 "Designed and implemented scalable AWS cloud architectures, ensuring high availability, security, and cost efficiency.",
@@ -68,7 +68,7 @@
             "company": "Quicken Loans, Detroit, Michigan",
             "duration": "Jun 19 - Dec 19",
             "achievements": [
-                "Performed detailed data-analysis on large datasets, driving a 10% decrease in operation cost.",
+                "Performed detailed data analysis on large datasets, driving a 10% decrease in operation cost.",
                 "Created interactive dashboards using Tableau, reducing report generation time by 25%.",
                 "Developed custom SQL queries to analyze & retrieve data, optimizing query performance by 15%.",
                 "Partnered with business units to identify KPIs and built visualizations to track progress."
