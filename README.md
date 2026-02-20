@@ -3,6 +3,9 @@
 A dynamic, high-performance portfolio website for **Shradha Dubey**, a Big Data Engineer with 6+ years of experience. This project showcases a modern tech stack and is designed for seamless deployment on cloud platforms like Render or PythonAnywhere.
 https://shradhadubey.vercel.app/
 
+[![GitHub Streak](https://streak-stats.demolab.com/?user=shradhadubey)](https://git.io/streak-stats)
+
+
 ## System Design Patterns
 In this portfolio and my featured projects, I implement the following Data Engineering principles:
 - **Idempotency:** Ensuring pipelines can be re-run without duplicating data.
