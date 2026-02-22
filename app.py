@@ -24,6 +24,9 @@ def index():
     except Exception as e:
         print(f"Error loading profile: {e}")
         return f"Internal Server Error: {e}", 500
+    
+def services():
+    return render_template("services.html", profile=profile)
 
 # Required for Vercel
 app = app
