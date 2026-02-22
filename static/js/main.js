@@ -1,45 +1,36 @@
 // ===========================
 // METRIC COUNTER (ON SCROLL)
 // ===========================
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const counters = document.querySelectorAll(".metric");
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseFloat(counter.getAttribute("data-value"));
-
-                if (!target || counter.classList.contains("counted")) return;
-
-                counter.classList.add("counted");
-
-                let start = 0;
-                const duration = 1500;
-                const increment = target / (duration / 16);
-
-                function update() {
-                    start += increment;
-
-                    if (start < target) {
-                        counter.innerText = target % 1 !== 0
-                            ? start.toFixed(1)
-                            : Math.floor(start);
-                        requestAnimationFrame(update);
-                    } else {
-                        counter.innerText = target;
-                    }
-                }
-
-                update();
-            }
-        });
-    }, { threshold: 0.5 });
-
     counters.forEach(counter => {
-        observer.observe(counter);
+        const target = parseFloat(counter.dataset.value);
+
+        if (isNaN(target)) {
+            console.log("Invalid data-value on:", counter);
+            return;
+        }
+
+        let current = 0;
+        const duration = 1500;
+        const increment = target / (duration / 16);
+
+        function update() {
+            current += increment;
+
+            if (current < target) {
+                counter.innerText = target % 1 !== 0
+                    ? current.toFixed(1)
+                    : Math.floor(current);
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target;
+            }
+        }
+
+        update();
     });
 
 });
