@@ -29,16 +29,6 @@
     </div>
 </section>
 
-<section id="architecture" class="content-section">
-    <h3 class="section-title">Data Platform Strategy</h3>
-
-    <div class="architecture-grid">
-        <div class="arch-box bronze">Bronze<br><small>Raw Ingestion</small></div>
-        <div class="arch-box silver">Silver<br><small>Validation + Transformation</small></div>
-        <div class="arch-box gold">Gold<br><small>Analytics Layer</small></div>
-    </div>
-</section>
-
 <section id="experience" class="content-section">
     <h3 class="section-title">Professional Experience</h3>
 
@@ -60,6 +50,21 @@
             {% endfor %}
         </ul>
     </div>
+    {% endfor %}
+</section>
+
+<section>
+    <h3 class="section-title">Core Technical Stack</h3>
+
+    {% for category, items in profile.skills.items() %}
+        <div class="mb-3">
+            <strong class="text-uppercase small text-muted">{{ category }}</strong>
+            <div>
+                {% for item in items %}
+                    <span class="tech-badge">{{ item }}</span>
+                {% endfor %}
+            </div>
+        </div>
     {% endfor %}
 </section>
 
@@ -106,19 +111,14 @@
     <canvas id="flowCanvas"></canvas>
 </section>
 
-<section>
-    <h3 class="section-title">Core Technical Stack</h3>
+<section id="architecture" class="content-section">
+    <h3 class="section-title">Data Platform Strategy</h3>
 
-    {% for category, items in profile.skills.items() %}
-        <div class="mb-3">
-            <strong class="text-uppercase small text-muted">{{ category }}</strong>
-            <div>
-                {% for item in items %}
-                    <span class="tech-badge">{{ item }}</span>
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
+    <div class="architecture-grid">
+        <div class="arch-box bronze">Bronze<br><small>Raw Ingestion</small></div>
+        <div class="arch-box silver">Silver<br><small>Validation + Transformation</small></div>
+        <div class="arch-box gold">Gold<br><small>Analytics Layer</small></div>
+    </div>
 </section>
 
 <section class="content-section">
@@ -134,16 +134,6 @@
     </div>
 </section>
 
-<section class="content-section">
-    <h3 class="section-title">Technical Writing</h3>
-    <div class="project-card">
-        <ul>
-            <li><a href="#">Designing Cost-Efficient AWS Data Lakes</a></li>
-            <li><a href="#">Optimizing Spark for TB-scale Datasets</a></li>
-            <li><a href="#">Serverless ETL at Scale</a></li>
-        </ul>
-    </div>
-</section>
 
 <section id="github" class="content-section">
     <h3 class="section-title">GitHub Activity</h3>
