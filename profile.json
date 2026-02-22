@@ -23,7 +23,8 @@
     "skills": {
         "languages": ["Python", "SQL", "Scala"],
         "tools": ["Apache Spark", "Airflow", "Docker", "AWS", "dbt"],
-        "databases": ["PostgreSQL", "MongoDB", "Redshift"]
+        "databases": ["PostgreSQL", "MongoDB", "Redshift"],
+        "cloud": ["Cloud ETL Pipeline", "AWS Lambda", "S3", "Athena", "Glue Catalog", "Glue ETL", "Step Functions", "CloudWatch", "IAM", "SNS"]
 },
     "experience": [
         {
