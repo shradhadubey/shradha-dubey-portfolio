@@ -21,14 +21,21 @@ document.querySelectorAll('.metric').forEach(el => {
 });
 
 // ===========================
-// FADE IN ON SCROLL
+// SECTION FADE ON SCROLL
 // ===========================
+const sections = document.querySelectorAll(".content-section");
+
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
         }
     });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+    section.classList.add("section-animate");
+    observer.observe(section);
 });
 
 document.querySelectorAll('section').forEach(section => {
