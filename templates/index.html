@@ -81,25 +81,6 @@
 </section>
 
 <section class="content-section">
-    <h3 class="section-title">Selected Architecture</h3>
-
-    {% for project in profile.projects %}
-    <div class="project-card">
-        <h5 class="fw-bold">{{ project.title }}</h5>
-
-        <div class="mt-3">
-            {% for t in project.tech %}
-                <span class="tech-badge">{{ t }}</span>
-            {% endfor %}
-        </div>
-    </div>
-    {% endfor %}
-</section>
-
-<section class="content-section">
-    <h3 class="section-title">Data Platform Architecture</h3>
-
-<section class="content-section">
     <h3 class="section-title">Data Platform Architecture</h3>
 
     <div class="diagram-wrapper">
