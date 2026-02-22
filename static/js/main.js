@@ -1,23 +1,47 @@
 // ===========================
-// METRIC ANIMATION
+// METRIC COUNTER (ON SCROLL)
 // ===========================
-function animate(el, end) {
-    let start = 0;
-    let duration = 1200;
-    let startTime = null;
 
-    function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        let progress = timestamp - startTime;
-        let percent = Math.min(progress / duration, 1);
-        el.innerText = (end * percent).toFixed(1);
-        if (percent < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll('.metric').forEach(el => {
-    animate(el, parseFloat(el.dataset.value));
+    const counters = document.querySelectorAll(".metric");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseFloat(counter.getAttribute("data-value"));
+
+                if (!target || counter.classList.contains("counted")) return;
+
+                counter.classList.add("counted");
+
+                let start = 0;
+                const duration = 1500;
+                const increment = target / (duration / 16);
+
+                function update() {
+                    start += increment;
+
+                    if (start < target) {
+                        counter.innerText = target % 1 !== 0
+                            ? start.toFixed(1)
+                            : Math.floor(start);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+
+                update();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
 });
 
 // ===========================
