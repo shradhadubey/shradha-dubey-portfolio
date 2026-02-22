@@ -461,3 +461,42 @@ html {
         transparent
     );
 }
+
+.diagram-wrapper {
+    position: relative;
+    margin-top: 60px;
+}
+
+#architectureCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    z-index: 0;
+}
+
+.interactive-diagram {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.node {
+    padding: 18px 35px;
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(96,165,250,0.3);
+    backdrop-filter: blur(10px);
+    color: #60a5fa;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.node:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(96,165,250,0.6);
+    border-color: #60a5fa;
+}

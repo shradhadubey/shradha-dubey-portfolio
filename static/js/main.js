@@ -131,6 +131,61 @@ if (canvas) {
     animateParticles();
 }
 
+// ===========================
+// ARCHITECTURE FLOW CONNECTORS
+// ===========================
+
+const archCanvas = document.getElementById("architectureCanvas");
+
+if (archCanvas) {
+
+    const ctx = archCanvas.getContext("2d");
+    const nodes = document.querySelectorAll(".node");
+
+    function resizeCanvas() {
+        archCanvas.width = archCanvas.offsetWidth;
+        archCanvas.height = 220;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let offset = 0;
+
+    function drawLines() {
+
+        ctx.clearRect(0, 0, archCanvas.width, archCanvas.height);
+
+        const positions = [];
+
+        nodes.forEach(node => {
+            const rect = node.getBoundingClientRect();
+            const parentRect = archCanvas.getBoundingClientRect();
+
+            positions.push({
+                x: rect.left - parentRect.left + rect.width / 2,
+                y: rect.top - parentRect.top + rect.height / 2
+            });
+        });
+
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#60a5fa";
+        ctx.setLineDash([8, 6]);
+        ctx.lineDashOffset = -offset;
+
+        for (let i = 0; i < positions.length - 1; i++) {
+            ctx.beginPath();
+            ctx.moveTo(positions[i].x, positions[i].y);
+            ctx.lineTo(positions[i + 1].x, positions[i + 1].y);
+            ctx.stroke();
+        }
+
+        offset += 1;
+        requestAnimationFrame(drawLines);
+    }
+
+    drawLines();
+}
 
 // ===========================
 // ACTIVE NAV HIGHLIGHT
