@@ -30,6 +30,32 @@
 </section>
 
 <section class="mb-5">
+    <h3 class="section-title">System Architecture</h3>
+
+    <div class="system-diagram">
+        <div class="node">S3</div>
+        <div class="arrow"></div>
+        <div class="node">Glue</div>
+        <div class="arrow"></div>
+        <div class="node">Spark</div>
+        <div class="arrow"></div>
+        <div class="node">Redshift</div>
+        <div class="arrow"></div>
+        <div class="node">BI</div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h3 class="section-title">Data Platform Strategy</h3>
+
+    <div class="architecture-grid">
+        <div class="arch-box bronze">Bronze<br><small>Raw Ingestion</small></div>
+        <div class="arch-box silver">Silver<br><small>Validation + Transformation</small></div>
+        <div class="arch-box gold">Gold<br><small>Analytics Layer</small></div>
+    </div>
+</section>
+
+<section class="mb-5">
     <h3 class="section-title">Professional Experience</h3>
 
     {% for job in profile.experience %}
@@ -82,6 +108,39 @@
             </div>
         </div>
     {% endfor %}
+</section>
+
+<section class="mb-5">
+    <h3 class="section-title">Technical Philosophy</h3>
+    <div class="project-card">
+        <ul>
+            <li>Design for scale before optimization.</li>
+            <li>Automate everything — manual pipelines fail at scale.</li>
+            <li>Cloud-native first, infrastructure as code always.</li>
+            <li>Measure performance. Optimize with data, not instinct.</li>
+            <li>Reliability > cleverness.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h3 class="section-title">Technical Writing</h3>
+    <div class="project-card">
+        <ul>
+            <li><a href="#">Designing Cost-Efficient AWS Data Lakes</a></li>
+            <li><a href="#">Optimizing Spark for TB-scale Datasets</a></li>
+            <li><a href="#">Serverless ETL at Scale</a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="mb-5">
+    <h3 class="section-title">GitHub Activity</h3>
+    <div class="project-card text-center">
+        <img src="https://ghchart.rshah.org/60a5fa/shradhadubey" 
+             alt="GitHub Contribution Chart" 
+             style="width:100%; max-width:700px;">
+    </div>
 </section>
 
 {% endblock %}
