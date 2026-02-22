@@ -87,9 +87,12 @@ const details = document.getElementById("nodeDetails");
 
 nodes.forEach(node => {
     node.addEventListener("click", () => {
+        document.querySelectorAll(".node").forEach(n => n.classList.remove("active-node"));
+        node.classList.add("active-node");
         details.innerText = node.dataset.info;
     });
 });
+
 
 // ===========================
 // DATA FLOW PARTICLES
