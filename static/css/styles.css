@@ -1,10 +1,17 @@
 .navbar {
     background: #111827 !important;
 }
+
 body {
     background: #0f1115;
     color: #e5e7eb;
     font-family: system-ui, -apple-system, sans-serif;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+    background-size: 40px 40px;
 }
 
 /* Improve muted text contrast */
@@ -61,4 +68,77 @@ a {
 
 a:hover {
     color: #93c5fd;
+}
+
+/* =========================
+   CARD ELEVATION + HOVER
+========================= */
+
+.project-card,
+.experience-block {
+    transition: all 0.25s ease;
+}
+
+.project-card {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.experience-block:hover {
+    border-left-color: #60a5fa;
+    transform: translateX(4px);
+}
+
+/* =========================
+   FADE IN ANIMATION
+========================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light-mode {
+    background: #f8fafc;
+    color: #111827;
+}
+
+body.light-mode .project-card {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body.light-mode .tech-badge {
+    background: #e5e7eb;
+    color: #2563eb;
+}
+
+body.light-mode .section-title {
+    color: #374151;
+}
+
+body.light-mode .experience-block {
+    border-left-color: #cbd5e1;
+}
+
+body.light-mode .navbar {
+    background: #ffffff !important;
+}
+
+body.light-mode a {
+    color: #2563eb;
 }
