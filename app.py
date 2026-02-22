@@ -26,7 +26,7 @@ def index():
         return f"Internal Server Error: {e}", 500
     
 def services():
-    return render_template("services.html", profile=profile)
+    return render_template("services.html")
 
 # Required for Vercel
 app = app
