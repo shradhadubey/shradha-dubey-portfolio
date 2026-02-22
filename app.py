@@ -1,5 +1,6 @@
 import os
 import json
+import profile
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -25,8 +26,13 @@ def index():
         print(f"Error loading profile: {e}")
         return f"Internal Server Error: {e}", 500
     
+@app.route("/services")
 def services():
-    return render_template("services.html")
+    return render_template("services.html", profile=profile)
+
+@app.route("/hire")
+def hire():
+    return render_template("hire.html", profile=profile)
 
 # Required for Vercel
 app = app
