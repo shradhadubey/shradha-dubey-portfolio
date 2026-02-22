@@ -40,13 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===========================
 const contentSections = document.querySelectorAll(".content-section");
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            setTimeout(() => {
+                entry.target.classList.add("visible");
+            }, index * 100);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
 contentSections.forEach(section => {
     section.classList.add("section-animate");
