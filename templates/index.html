@@ -30,22 +30,6 @@
 </section>
 
 <section class="content-section">
-    <h3 class="section-title">System Architecture</h3>
-
-    <div class="system-diagram">
-        <div class="node">S3</div>
-        <div class="arrow"></div>
-        <div class="node">Glue</div>
-        <div class="arrow"></div>
-        <div class="node">Spark</div>
-        <div class="arrow"></div>
-        <div class="node">Redshift</div>
-        <div class="arrow"></div>
-        <div class="node">BI</div>
-    </div>
-</section>
-
-<section class="content-section">
     <h3 class="section-title">Data Platform Strategy</h3>
 
     <div class="architecture-grid">
@@ -93,6 +77,33 @@
         </div>
     </div>
     {% endfor %}
+</section>
+
+<section class="content-section">
+    <h3 class="section-title">Data Platform Architecture</h3>
+
+    <div class="interactive-diagram">
+        <div class="node" data-info="Amazon S3 stores raw ingestion data from multiple sources.">
+            S3
+        </div>
+
+        <div class="node" data-info="AWS Glue performs schema validation and ETL orchestration.">
+            Glue
+        </div>
+
+        <div class="node" data-info="Spark handles distributed transformations at scale.">
+            Spark
+        </div>
+
+        <div class="node" data-info="Redshift powers analytics and BI queries.">
+            Redshift
+        </div>
+    </div>
+
+    <div id="nodeDetails" class="node-details">
+        Click a component to see details.
+    </div>
+    <canvas id="flowCanvas"></canvas>
 </section>
 
 <section>
