@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===========================
 // SECTION FADE ON SCROLL
 // ===========================
-const sections = document.querySelectorAll(".content-section");
+const contentSections = document.querySelectorAll(".content-section");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.1 });
 
-sections.forEach(section => {
+contentSections.forEach(section => {
     section.classList.add("section-animate");
     observer.observe(section);
 });
@@ -136,20 +136,16 @@ if (canvas) {
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
-    let current = "";
+allSections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+    }
+});
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+    }
 });
