@@ -1,100 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="hero-section">
-    <div class="hero-content">
-        <h1 class="hero-title">Work With Me</h1>
-        <p class="hero-subtitle">
-            I design scalable, AI-ready data platforms for global teams.
-            Open to remote consulting, architecture advisory, and long-term contracts.
+<section class="section">
+    <div class="container-narrow">
+
+        <div class="section-title">Hire Us</div>
+
+        <h2 class="mb-4">
+            Let’s Build Your Data & AI Infrastructure
+        </h2>
+
+        <p class="mb-5" style="color:#94a3b8;">
+            We partner with global teams to design, optimize,
+            and scale cloud-native data platforms.
+            From early-stage startups to enterprise systems,
+            we deliver production-grade solutions.
         </p>
+
+        <div class="card-clean">
+
+            <h5 class="mb-3">Engagement Models</h5>
+
+            <ul>
+                <li>Architecture Consulting</li>
+                <li>End-to-End Data Platform Build</li>
+                <li>Performance Optimization</li>
+                <li>AI/ML Pipeline Enablement</li>
+                <li>Short-term Advisory</li>
+            </ul>
+
+            <hr style="border-color:rgba(255,255,255,0.1); margin:40px 0;">
+
+            <h5>Contact</h5>
+
+            <p style="color:#94a3b8;">
+                Email us directly:
+            </p>
+
+            <p>
+                <strong>
+                    <a href="mailto:shradha.dubeyy@gmail.com"
+                       style="color:#60a5fa; text-decoration:none;">
+                        shradha.dubeyy@gmail.com
+                    </a>
+                </strong>
+            </p>
+
+        </div>
     </div>
 </section>
-
-<section class="content-section">
-    <h3 class="section-title">Engagement Models</h3>
-
-    <div class="service-grid">
-
-        <div class="service-card">
-            <h5>Architecture Advisory</h5>
-            <p>
-                Strategic system design, scalability reviews,
-                performance audits, and technical roadmap guidance.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h5>End-to-End Data Platform Build</h5>
-            <p>
-                Design and implementation of cloud-native
-                data lakes, streaming pipelines, and analytics layers.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h5>AI Infrastructure Optimization</h5>
-            <p>
-                Preparing data systems for ML workflows,
-                feature engineering pipelines, and model deployment.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h5>Cloud Cost & Performance Optimization</h5>
-            <p>
-                Reduce infrastructure spend while increasing
-                throughput and system reliability.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="content-section">
-    <h3 class="section-title">Who I Work With</h3>
-
-    <div class="project-card">
-        <ul>
-            <li>AI startups scaling from MVP to production</li>
-            <li>Enterprises modernizing legacy data systems</li>
-            <li>Global teams building distributed analytics platforms</li>
-            <li>Founders needing architecture guidance before hiring internally</li>
-        </ul>
-    </div>
-</section>
-
-<section class="content-section">
-    <h3 class="section-title">How We Collaborate</h3>
-
-    <div class="project-card">
-        <ul>
-            <li>Remote-first (US / EU / APAC timezone flexibility)</li>
-            <li>Project-based or long-term contract</li>
-            <li>NDA-compliant engagements</li>
-            <li>Clear milestone-based delivery model</li>
-        </ul>
-    </div>
-</section>
-
-<section class="content-section text-center">
-    <h3 class="section-title">Start a Conversation</h3>
-    <p>
-        Tell me about your infrastructure challenge.
-        I’ll respond within 24 hours.
-    </p>
-
-    <a href="/#contact" class="btn-primary mt-3">
-        Contact Me
-    </a>
-</section>
-
-<form method="POST" action="/inquiry" class="mt-4">
-    <input type="text" name="name" placeholder="Full Name" required class="form-control mb-3">
-    <input type="email" name="email" placeholder="Work Email" required class="form-control mb-3">
-    <input type="text" name="company" placeholder="Company Name" class="form-control mb-3">
-    <textarea name="project" placeholder="Describe your infrastructure challenge" rows="6" required class="form-control mb-3"></textarea>
-    <button type="submit" class="btn-primary">Submit Inquiry</button>
-</form>
 
 {% endblock %}
