@@ -7,6 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,27 +26,23 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-
+      
         <li class="nav-item">
-          <a class="nav-link" href="#architecture">Architecture</a>
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
         </li>
-
+      
         <li class="nav-item">
-          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="{{ url_for('index') }}#architecture">Architecture</a>
         </li>
-
+      
         <li class="nav-item">
-        <a class="nav-link" href="/services">Services</a>
+          <a class="nav-link" href="{{ url_for('services') }}">Services</a>
         </li>
-
+      
         <li class="nav-item">
-          <a class="nav-link" href="#github">GitHub</a>
+          <a class="nav-link" href="{{ url_for('hire') }}">Hire</a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-
+      
       </ul>
 
       <button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">
@@ -59,6 +56,24 @@
 <div class="container py-5">
     {% block content %}{% endblock %}
 </div>
+
+<section class="cta-section text-center">
+    <div class="container">
+        <h2>Let’s Build Your Data Platform Right</h2>
+        <p class="mb-4">
+            Whether you're scaling to millions of events per day
+            or preparing for AI deployment — we can help.
+        </p>
+        <a href="/hire" class="btn-primary">Start a Conversation</a>
+    </div>
+</section>
+
+<section class="logo-strip text-center">
+    <p>Cloud Ecosystem</p>
+    <div class="logos">
+        AWS • GCP • Azure • Snowflake • Kafka • Spark
+    </div>
+</section>
 
 <footer class="text-center border-top py-4 small text-muted">
     Data Platform Engineering | Built with Flask

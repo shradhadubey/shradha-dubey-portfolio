@@ -191,21 +191,18 @@ if (archCanvas) {
 }
 
 // ===========================
-// ACTIVE NAV HIGHLIGHT
+// ACTIVE NAV (safe version)
 // ===========================
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
+document.addEventListener("DOMContentLoaded", function () {
 
-allSections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-    }
-});
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll(".nav-link");
 
-navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-    }
+    navLinks.forEach(link => {
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+            link.classList.add("active");
+        }
+    });
+
 });

@@ -22,7 +22,7 @@
 body {
     background: #0f1115;
     color: #e5e7eb;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     padding-top: 80px;
 
     background-image:
@@ -35,6 +35,64 @@ body {
 /* Improve muted text contrast */
 .text-muted {
     color: #9ca3af !important;
+}
+
+/* ===== STARTUP VISUAL SYSTEM ===== */
+
+.startup-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 20%, #0f172a, #020617);
+}
+
+.badge.bg-primary-soft {
+    background: rgba(96,165,250,0.1);
+    color: #60a5fa;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-cta .btn-primary {
+    padding: 12px 28px;
+    border-radius: 8px;
+}
+
+.hero-cta .btn-secondary {
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+}
+
+/* Trust Section */
+
+.trust-strip {
+    padding: 60px 0;
+    background: rgba(255,255,255,0.02);
+}
+
+.trust-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.trust-metrics h4 {
+    font-size: 1.8rem;
+    color: #60a5fa;
 }
 
 /* =========================
@@ -87,9 +145,6 @@ body {
     background: linear-gradient(to bottom, transparent, #0f1115);
 }
 
-.hero-section {
-    position: relative;
-}
 
 .btn-primary {
     background: #60a5fa;
@@ -102,8 +157,8 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(96,165,250,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(96,165,250,0.4);
 }
 
 .btn-secondary {
@@ -146,7 +201,9 @@ body {
     max-width: 1100px;
     margin: auto;
     transition: all 0.4s ease;
+    position: relative;
 }
+
 
 /* Soft divider */
 .content-section:not(:first-child) {
@@ -330,12 +387,6 @@ body.light-mode a {
     100% { box-shadow: 0 0 0px rgba(96,165,250,0.2); }
 }
 
-.architecture-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
 .arch-box {
     padding: 20px;
     border-radius: 8px;
@@ -344,11 +395,6 @@ body.light-mode a {
     font-weight: 600;
 }
 
-.content-section {
-    padding: 80px 0;
-    max-width: 1100px;
-    margin: auto;
-}
 
 .interactive-diagram {
     display: flex;
@@ -358,29 +404,6 @@ body.light-mode a {
     margin: 40px 0;
 }
 
-.node {
-    background: #1f2937;
-    padding: 18px 28px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.25s ease;
-}
-
-.node:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(96,165,250,0.4);
-    background: #111827;
-}
-
-.node-details {
-    text-align: center;
-    max-width: 600px;
-    margin: 30px auto 0;
-    padding: 20px;
-    background: #161b22;
-    border-radius: 10px;
-}
 
 #flowCanvas {
     position: absolute;
@@ -390,19 +413,6 @@ body.light-mode a {
     opacity: 0.2;
 }
 
-.content-section {
-    position: relative;
-}
-
-.section-title {
-    margin-bottom: 40px;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-}
-
-.content-section + .content-section {
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
 
 /*============================
 System Architecture Grid
@@ -430,12 +440,6 @@ System Architecture Grid
 
 html {
     scroll-behavior: smooth;
-}
-
-/* Global spacing system */
-.content-section {
-    padding: 100px 0;
-    position: relative;
 }
 
 /* Alternating subtle background layers */
@@ -495,6 +499,7 @@ html {
     cursor: pointer;
 }
 
+
 .node:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 20px rgba(96,165,250,0.6);
@@ -526,4 +531,9 @@ html {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(96,165,250,0.2);
     border-color: #60a5fa;
+}
+
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(to right, #0f172a, #1e293b);
 }
