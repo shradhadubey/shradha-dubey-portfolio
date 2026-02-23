@@ -167,3 +167,71 @@ body::before {
     font-size: 0.85rem;
     color: #71717a;
 }
+
+/* Architecture Flow */
+
+.architecture-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flow-layer {
+    padding: 15px 25px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.flow-connector {
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, #ff3c3c, transparent);
+    animation: pulse 2s infinite;
+}
+
+/* Layered Stack */
+
+.stack-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.stack-layer {
+    padding: 15px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+    transform: perspective(500px) rotateX(3deg);
+    transition: 0.3s ease;
+}
+
+.stack-layer:hover {
+    transform: perspective(500px) rotateX(0deg) scale(1.03);
+}
+
+/* Animations */
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
