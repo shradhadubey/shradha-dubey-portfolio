@@ -1,83 +1,147 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section class="section architecture-hero">
+    <div class="container text-center">
+        <h2 class="mb-4">Enterprise Data Architecture Strategy</h2>
+        <p class="lead mb-5">
+            We architect AI-ready, scalable, fault-tolerant data platforms —
+            designed for performance, governance, and long-term evolution.
+        </p>
+    </div>
+</section>
+
+<!-- Animated Architecture Flow -->
 <section class="section">
     <div class="container">
+        <h3 class="mb-4 text-center">End-to-End Data Flow</h3>
 
-        <h2 class="mb-5">Architecture Strategy</h2>
+        <div class="architecture-flow">
 
-        <p class="mb-5" style="color:#a1a1aa; max-width:800px;">
-            Modern data systems are not pipelines.
-            They are distributed, fault-tolerant platforms designed
-            for analytics, AI enablement, and long-term scalability.
-            Our architecture strategy spans ingestion, processing,
-            governance, and AI-readiness.
-        </p>
+            <div class="flow-layer">Data Sources</div>
+            <div class="flow-connector"></div>
+
+            <div class="flow-layer">Ingestion Layer</div>
+            <div class="flow-connector"></div>
+
+            <div class="flow-layer">Processing Engine</div>
+            <div class="flow-connector"></div>
+
+            <div class="flow-layer">Lakehouse Storage</div>
+            <div class="flow-connector"></div>
+
+            <div class="flow-layer">Analytics & AI</div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Layered Visual Stack -->
+<section class="section">
+    <div class="container">
+        <h3 class="mb-5 text-center">Layered Architecture Stack</h3>
+
+        <div class="stack-container">
+
+            <div class="stack-layer">AI / ML Models</div>
+            <div class="stack-layer">Analytics & BI</div>
+            <div class="stack-layer">Gold Layer (Curated Data)</div>
+            <div class="stack-layer">Silver Layer (Cleaned Data)</div>
+            <div class="stack-layer">Bronze Layer (Raw Data)</div>
+            <div class="stack-layer">Streaming & Batch Ingestion</div>
+            <div class="stack-layer">Operational Data Sources</div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Real World Scenario -->
+<section class="section">
+    <div class="container">
+        <h3 class="mb-4">Real-World Example</h3>
+
+        <div class="glass-card">
+            <p>
+                A consumer platform generating millions of behavioral events per day
+                needed real-time personalization with sub-second latency.
+            </p>
+
+            <ul>
+                <li>5B+ events/day ingestion architecture</li>
+                <li>Identity resolution at scale</li>
+                <li>Incremental processing pipelines</li>
+                <li>Low-latency feature store for ML inference</li>
+                <li>PII isolation & governance controls</li>
+            </ul>
+
+            <p class="mt-3">
+                Result: A resilient, horizontally scalable architecture
+                capable of supporting real-time AI personalization
+                without compromising compliance or cost efficiency.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Problem → Solution Narrative -->
+<section class="section">
+    <div class="container">
+        <h3 class="mb-4">Client Problem → Architecture Solution</h3>
 
         <div class="services-grid">
 
             <div class="glass-card">
-                <h4>Data Ingestion Design</h4>
+                <h4>Problem</h4>
                 <ul>
-                    <li>Batch vs Real-Time ingestion strategy</li>
-                    <li>Event streaming systems</li>
-                    <li>Idempotent processing design</li>
-                    <li>Schema evolution handling</li>
+                    <li>Fragmented data systems</li>
+                    <li>Slow reporting cycles</li>
+                    <li>No real-time capability</li>
+                    <li>Unclear data ownership</li>
                 </ul>
             </div>
 
             <div class="glass-card">
-                <h4>Processing & Transformation</h4>
+                <h4>Our Solution</h4>
                 <ul>
-                    <li>ELT vs ETL trade-offs</li>
-                    <li>Distributed compute optimization</li>
-                    <li>Incremental & CDC pipelines</li>
-                    <li>Data quality enforcement</li>
-                </ul>
-            </div>
-
-            <div class="glass-card">
-                <h4>Storage & Modeling Strategy</h4>
-                <ul>
-                    <li>Medallion Architecture (Bronze/Silver/Gold)</li>
-                    <li>Lakehouse architecture</li>
-                    <li>Partitioning & indexing strategy</li>
-                    <li>Feature store design for ML</li>
-                </ul>
-            </div>
-
-            <div class="glass-card">
-                <h4>Governance & Security</h4>
-                <ul>
-                    <li>Data lineage & observability</li>
-                    <li>Access control & RBAC</li>
-                    <li>PII protection strategies</li>
-                    <li>Multi-tenant isolation</li>
-                </ul>
-            </div>
-
-            <div class="glass-card">
-                <h4>Scalability & Reliability</h4>
-                <ul>
-                    <li>High-availability architecture</li>
-                    <li>Auto-scaling compute layers</li>
-                    <li>Failure recovery design</li>
-                    <li>Latency SLAs & system resilience</li>
-                </ul>
-            </div>
-
-            <div class="glass-card">
-                <h4>AI & ML Enablement</h4>
-                <ul>
-                    <li>Feature engineering pipelines</li>
-                    <li>Training data versioning</li>
-                    <li>Inference data paths</li>
-                    <li>Experiment tracking integration</li>
+                    <li>Unified Lakehouse architecture</li>
+                    <li>Event-driven streaming pipelines</li>
+                    <li>Governed data domains</li>
+                    <li>AI-ready data modeling</li>
                 </ul>
             </div>
 
         </div>
+    </div>
+</section>
 
+<!-- How We Approach Architecture -->
+<section class="section">
+    <div class="container">
+        <h3 class="mb-5 text-center">How We Approach Architecture</h3>
+
+        <div class="services-grid">
+
+            <div class="glass-card">
+                <h4>1. Business Alignment</h4>
+                <p>Define analytics & AI objectives before infrastructure decisions.</p>
+            </div>
+
+            <div class="glass-card">
+                <h4>2. Scalability Design</h4>
+                <p>Design horizontally scalable distributed systems from day one.</p>
+            </div>
+
+            <div class="glass-card">
+                <h4>3. Governance by Design</h4>
+                <p>Embed security, lineage, and observability into the foundation.</p>
+            </div>
+
+            <div class="glass-card">
+                <h4>4. AI Enablement</h4>
+                <p>Architect data for model training, experimentation, and inference.</p>
+            </div>
+
+        </div>
     </div>
 </section>
 
