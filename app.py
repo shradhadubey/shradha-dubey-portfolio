@@ -28,11 +28,13 @@ def index():
     
 @app.route("/services")
 def services():
-    return render_template("services.html", profile=profile)
+    profile_data = load_data()
+    return render_template("services.html", profile=profile_data)
 
 @app.route("/hire")
 def hire():
-    return render_template("hire.html", profile=profile)
+    profile_data = load_data()
+    return render_template("hire.html", profile=profile_data)
 
 
 @app.route("/architecture")
@@ -75,8 +77,10 @@ def inquiry():
     conn.commit()
     conn.close()
 
-    return redirect(url_for("home"))
+    return redirect(url_for("index"))   
 
 
 # Required for Vercel
 app = app
+
+print(app.url_map)
