@@ -34,6 +34,16 @@ def services():
 def hire():
     return render_template("hire.html", profile=profile)
 
+
+@app.route("/architecture")
+def architecture():
+    return render_template("architecture.html")
+
+
+@app.route("/clients")
+def clients():
+    return render_template("clients.html")
+
 import sqlite3
 from flask import request, redirect, url_for
 
@@ -66,6 +76,7 @@ def inquiry():
     conn.close()
 
     return redirect(url_for("home"))
+
 
 # Required for Vercel
 app = app
