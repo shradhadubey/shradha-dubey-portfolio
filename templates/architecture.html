@@ -3,22 +3,81 @@
 
 <section class="section">
     <div class="container">
+
         <h2 class="mb-5">Architecture Strategy</h2>
 
-        <div class="glass-card">
-            <h4>Bronze Layer</h4>
-            <p>Immutable ingestion with audit-grade lineage.</p>
+        <p class="mb-5" style="color:#a1a1aa; max-width:800px;">
+            Modern data systems are not pipelines.
+            They are distributed, fault-tolerant platforms designed
+            for analytics, AI enablement, and long-term scalability.
+            Our architecture strategy spans ingestion, processing,
+            governance, and AI-readiness.
+        </p>
+
+        <div class="services-grid">
+
+            <div class="glass-card">
+                <h4>Data Ingestion Design</h4>
+                <ul>
+                    <li>Batch vs Real-Time ingestion strategy</li>
+                    <li>Event streaming systems</li>
+                    <li>Idempotent processing design</li>
+                    <li>Schema evolution handling</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h4>Processing & Transformation</h4>
+                <ul>
+                    <li>ELT vs ETL trade-offs</li>
+                    <li>Distributed compute optimization</li>
+                    <li>Incremental & CDC pipelines</li>
+                    <li>Data quality enforcement</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h4>Storage & Modeling Strategy</h4>
+                <ul>
+                    <li>Medallion Architecture (Bronze/Silver/Gold)</li>
+                    <li>Lakehouse architecture</li>
+                    <li>Partitioning & indexing strategy</li>
+                    <li>Feature store design for ML</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h4>Governance & Security</h4>
+                <ul>
+                    <li>Data lineage & observability</li>
+                    <li>Access control & RBAC</li>
+                    <li>PII protection strategies</li>
+                    <li>Multi-tenant isolation</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h4>Scalability & Reliability</h4>
+                <ul>
+                    <li>High-availability architecture</li>
+                    <li>Auto-scaling compute layers</li>
+                    <li>Failure recovery design</li>
+                    <li>Latency SLAs & system resilience</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h4>AI & ML Enablement</h4>
+                <ul>
+                    <li>Feature engineering pipelines</li>
+                    <li>Training data versioning</li>
+                    <li>Inference data paths</li>
+                    <li>Experiment tracking integration</li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="glass-card mt-4">
-            <h4>Silver Layer</h4>
-            <p>Validated transformations with governance controls.</p>
-        </div>
-
-        <div class="glass-card mt-4">
-            <h4>Gold Layer</h4>
-            <p>Analytics, ML feature stores, AI consumption layer.</p>
-        </div>
     </div>
 </section>
 
