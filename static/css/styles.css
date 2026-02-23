@@ -202,6 +202,8 @@ body::before {
 }
 
 .flow-layer {
+    position: relative;
+    cursor: pointer;
     padding: 15px 25px;
     border-radius: 12px;
     background: rgba(255,255,255,0.05);
@@ -209,6 +211,30 @@ body::before {
     border: 1px solid rgba(255,255,255,0.1);
     animation: fadeInUp 1s ease forwards;
 }
+
+.flow-layer::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.flow-layer:hover::after {
+    opacity: 1;
+    bottom: -55px;
+}
+    
 
 .flow-connector {
     height: 2px;
