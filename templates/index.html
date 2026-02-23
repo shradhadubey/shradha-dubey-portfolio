@@ -1,40 +1,32 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<section class="hero-section startup-hero">
-    <div class="hero-content container text-center">
-        <span class="badge bg-primary-soft mb-3">AI Infrastructure • Data Platforms • Global Consulting</span>
-
+<!-- HERO -->
+<section class="startup-hero">
+    <div class="container text-center">
         <h1 class="hero-title">
             Building AI-Ready Data Infrastructure
-            <br>
-            For High-Growth Companies
         </h1>
 
         <p class="hero-subtitle">
-            We design, modernize, and scale cloud-native data platforms
-            that power real-time intelligence and production AI systems.
+            Cloud-native data platforms engineered for scale,
+            reliability, and AI-driven intelligence.
         </p>
 
-        <div class="hero-cta mt-4">
-            <a href="/hire" class="btn-primary me-3">Book Strategy Call</a>
+        <div class="hero-cta">
+            <a href="/hire" class="btn-primary">Book Strategy Call</a>
             <a href="/services" class="btn-secondary">Explore Services</a>
         </div>
     </div>
-
-    <canvas id="flowCanvas"></canvas>
 </section>
 
-<section class="trust-strip text-center">
+<!-- TRUST STRIP -->
+<section class="trust-strip">
     <div class="container">
-        <p class="trust-text">
-            Serving clients across India, US, Europe & Remote-First Teams
-        </p>
-
+        <p>Serving clients globally — India, US, Europe</p>
         <div class="trust-metrics">
             <div>
-                <h4>5+</h4>
+                <h4>6+</h4>
                 <span>Years Engineering</span>
             </div>
             <div>
@@ -42,33 +34,15 @@
                 <span>Cloud Cost Reduction</span>
             </div>
             <div>
-                <h4>10B+</h4>
-                <span>Events Processed</span>
+                <h4>99.9%</h4>
+                <span>System Reliability</span>
             </div>
         </div>
     </div>
 </section>
 
-<section class="row text-center mb-5">
-    <div class="col-md-3">
-        <h2 class="metric" data-value="6">0</h2>
-        <p class="text-muted small">Years Experience</p>
-    </div>
-    <div class="col-md-3">
-        <h2 class="metric" data-value="20">0</h2>
-        <p class="text-muted small">Cost Reduction %</p>
-    </div>
-    <div class="col-md-3">
-        <h2 class="metric" data-value="15">0</h2>
-        <p class="text-muted small">Performance Optimization %</p>
-    </div>
-    <div class="col-md-3">
-        <h2 class="metric" data-value="99.9">0</h2>
-        <p class="text-muted small">System Reliability %</p>
-    </div>
-</section>
-
-<section id="experience" class="content-section">
+<!-- EXPERIENCE -->
+<section class="content-section">
     <h3 class="section-title">Professional Experience</h3>
 
     {% for job in profile.experience %}
@@ -92,21 +66,7 @@
     {% endfor %}
 </section>
 
-<section>
-    <h3 class="section-title">Core Technical Stack</h3>
-
-    {% for category, items in profile.skills.items() %}
-        <div class="mb-3">
-            <strong class="text-uppercase small text-muted">{{ category }}</strong>
-            <div>
-                {% for item in items %}
-                    <span class="tech-badge">{{ item }}</span>
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
-</section>
-
+<!-- ARCHITECTURE -->
 <section class="content-section">
     <h3 class="section-title">Data Platform Architecture</h3>
 
@@ -114,60 +74,40 @@
         <canvas id="architectureCanvas"></canvas>
 
         <div class="interactive-diagram">
-            <div class="node" data-info="Amazon S3 stores raw ingestion data from multiple sources.">
-                S3
-            </div>
-
-            <div class="node" data-info="AWS Glue performs schema validation and ETL orchestration.">
-                Glue
-            </div>
-
-            <div class="node" data-info="Spark handles distributed transformations at scale.">
-                Spark
-            </div>
-
-            <div class="node" data-info="Redshift powers analytics and BI queries.">
-                Redshift
-            </div>
+            <div class="node" data-info="Amazon S3 stores raw ingestion data.">S3</div>
+            <div class="node" data-info="Glue handles orchestration & schema validation.">Glue</div>
+            <div class="node" data-info="Spark performs distributed transformations.">Spark</div>
+            <div class="node" data-info="Redshift powers analytics workloads.">Redshift</div>
         </div>
     </div>
 
     <div id="nodeDetails" class="node-details">
-        Click a component to see details.
+        Click a component to view details.
     </div>
-    <canvas id="flowCanvas"></canvas>
 </section>
 
-<section id="architecture" class="content-section">
+<!-- STRATEGY -->
+<section class="content-section">
     <h3 class="section-title">Data Platform Strategy</h3>
 
     <div class="architecture-grid">
-        <div class="arch-box bronze">Bronze<br><small>Raw Ingestion</small></div>
-        <div class="arch-box silver">Silver<br><small>Validation + Transformation</small></div>
-        <div class="arch-box gold">Gold<br><small>Analytics Layer</small></div>
+        <div class="arch-box">Bronze<br><small>Raw Ingestion</small></div>
+        <div class="arch-box">Silver<br><small>Transformation</small></div>
+        <div class="arch-box">Gold<br><small>Analytics Layer</small></div>
     </div>
 </section>
 
+<!-- PHILOSOPHY -->
 <section class="content-section">
     <h3 class="section-title">Technical Philosophy</h3>
     <div class="project-card">
         <ul>
-            <li>Design for scale before optimization.</li>
-            <li>Automate everything — manual pipelines fail at scale.</li>
-            <li>Cloud-native first, infrastructure as code always.</li>
-            <li>Measure performance. Optimize with data, not instinct.</li>
-            <li>Reliability > cleverness.</li>
+            <li>Design for scale first.</li>
+            <li>Automate aggressively.</li>
+            <li>Cloud-native architecture always.</li>
+            <li>Measure before optimizing.</li>
+            <li>Reliability over cleverness.</li>
         </ul>
-    </div>
-</section>
-
-
-<section id="github" class="content-section">
-    <h3 class="section-title">GitHub Activity</h3>
-    <div class="project-card text-center">
-        <img src="https://ghchart.rshah.org/60a5fa/shradhadubey" 
-             alt="GitHub Contribution Chart" 
-             style="width:100%; max-width:700px;">
     </div>
 </section>
 
