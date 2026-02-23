@@ -18,20 +18,36 @@
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <div class="container">
+
+        <!-- Brand -->
         <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
-            SD | Data & AI Consulting
+            Shradha Dubey
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navigation Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link" href="{{ url_for('index') }}">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('services') }}">
+                        Services
+                    </a>
                 </li>
 
                 <li class="nav-item">
@@ -46,15 +62,15 @@
                     </a>
                 </li>
 
-                <li class="nav-item ms-lg-3">
-                    <a class="btn-primary-custom"
-                       href="{{ url_for('hire') }}">
+                <li class="nav-item ms-lg-4">
+                    <a class="btn-primary-custom" href="{{ url_for('hire') }}">
                         Hire Us
                     </a>
                 </li>
 
             </ul>
         </div>
+
     </div>
 </nav>
 
