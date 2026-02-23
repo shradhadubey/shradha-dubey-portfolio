@@ -1,113 +1,74 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- HERO -->
-<section class="startup-hero">
-    <div class="container text-center">
-        <h1 class="hero-title">
-            Building AI-Ready Data Infrastructure
+<section class="hero">
+    <div class="container-narrow">
+        <h1>
+            Enterprise-Grade Data Platforms
+            Built for Scale
         </h1>
 
-        <p class="hero-subtitle">
-            Cloud-native data platforms engineered for scale,
-            reliability, and AI-driven intelligence.
+        <p>
+            We design and implement cloud-native data infrastructure
+            powering analytics, real-time systems, and AI workloads.
         </p>
 
-        <div class="hero-cta">
-            <a href="/hire" class="btn-primary">Book Strategy Call</a>
-            <a href="/services" class="btn-secondary">Explore Services</a>
+        <a href="{{ url_for('hire') }}" class="btn-primary-custom">
+            Book Consultation
+        </a>
+
+        <a href="{{ url_for('services') }}" class="btn-outline-custom">
+            View Services
+        </a>
+    </div>
+</section>
+
+<section id="architecture" class="section">
+    <div class="container-narrow">
+        <div class="section-title">Architecture Strategy</div>
+
+        <div class="architecture-grid">
+            <div class="arch-box">
+                <strong>Bronze</strong><br>
+                Raw Data Ingestion
+            </div>
+
+            <div class="arch-box">
+                <strong>Silver</strong><br>
+                Validation & Processing
+            </div>
+
+            <div class="arch-box">
+                <strong>Gold</strong><br>
+                Analytics & BI Layer
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="trust-strip">
-    <div class="container">
-        <p>Serving clients globally — India, US, Europe</p>
-        <div class="trust-metrics">
-            <div>
-                <h4>6+</h4>
-                <span>Years Engineering</span>
+<section class="section">
+    <div class="container-narrow">
+        <div class="section-title">Professional Experience</div>
+
+        {% for job in profile.experience %}
+        <div class="card-clean">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <strong>{{ job.role }}</strong><br>
+                    <small class="text-muted">
+                        {{ job.company or job.profession }}
+                    </small>
+                </div>
+                <small>{{ job.duration }}</small>
             </div>
-            <div>
-                <h4>20%+</h4>
-                <span>Cloud Cost Reduction</span>
-            </div>
-            <div>
-                <h4>99.9%</h4>
-                <span>System Reliability</span>
-            </div>
+
+            <ul class="mt-3">
+                {% for achievement in job.achievements %}
+                <li>{{ achievement }}</li>
+                {% endfor %}
+            </ul>
         </div>
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="content-section">
-    <h3 class="section-title">Professional Experience</h3>
-
-    {% for job in profile.experience %}
-    <div class="experience-block">
-        <div class="d-flex justify-content-between">
-            <div>
-                <h5 class="fw-bold">{{ job.role }}</h5>
-                <p class="text-muted small">
-                    {{ job.company or job.profession }}
-                </p>
-            </div>
-            <span class="text-muted small">{{ job.duration }}</span>
-        </div>
-
-        <ul class="mt-3">
-            {% for achievement in job.achievements %}
-            <li>{{ achievement }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
-</section>
-
-<!-- ARCHITECTURE -->
-<section class="content-section">
-    <h3 class="section-title">Data Platform Architecture</h3>
-
-    <div class="diagram-wrapper">
-        <canvas id="architectureCanvas"></canvas>
-
-        <div class="interactive-diagram">
-            <div class="node" data-info="Amazon S3 stores raw ingestion data.">S3</div>
-            <div class="node" data-info="Glue handles orchestration & schema validation.">Glue</div>
-            <div class="node" data-info="Spark performs distributed transformations.">Spark</div>
-            <div class="node" data-info="Redshift powers analytics workloads.">Redshift</div>
-        </div>
-    </div>
-
-    <div id="nodeDetails" class="node-details">
-        Click a component to view details.
-    </div>
-</section>
-
-<!-- STRATEGY -->
-<section class="content-section">
-    <h3 class="section-title">Data Platform Strategy</h3>
-
-    <div class="architecture-grid">
-        <div class="arch-box">Bronze<br><small>Raw Ingestion</small></div>
-        <div class="arch-box">Silver<br><small>Transformation</small></div>
-        <div class="arch-box">Gold<br><small>Analytics Layer</small></div>
-    </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="content-section">
-    <h3 class="section-title">Technical Philosophy</h3>
-    <div class="project-card">
-        <ul>
-            <li>Design for scale first.</li>
-            <li>Automate aggressively.</li>
-            <li>Cloud-native architecture always.</li>
-            <li>Measure before optimizing.</li>
-            <li>Reliability over cleverness.</li>
-        </ul>
+        {% endfor %}
     </div>
 </section>
 
