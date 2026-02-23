@@ -134,8 +134,9 @@ body::before {
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(239,68,68,0.4);
+    transform: translateY(-12px);
+    border-color: rgba(239,68,68,0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 /* Services Grid */
