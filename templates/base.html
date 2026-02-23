@@ -106,5 +106,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.querySelectorAll('.stack-layer').forEach(layer => {
+    layer.addEventListener('mousemove', e => {
+        const rect = layer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateX = ((y / rect.height) - 0.5) * 10;
+        const rotateY = ((x / rect.width) - 0.5) * -10;
+
+        layer.style.transform =
+            `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    layer.addEventListener('mouseleave', () => {
+        layer.style.transform = "perspective(600px) rotateX(0) rotateY(0)";
+    });
+});
+</script>
+
 </body>
 </html>
