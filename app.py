@@ -35,35 +35,6 @@ def architecture():
 def clients():
     return render_template("clients.html")
 
-@app.route("/inquiry", methods=["POST"])
-def inquiry():
-    conn = sqlite3.connect("leads.db")
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS leads (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            email TEXT,
-            company TEXT,
-            project TEXT
-        )
-    """)
-
-    cursor.execute("""
-        INSERT INTO leads (name, email, company, project)
-        VALUES (?, ?, ?, ?)
-    """, (
-        request.form["name"],
-        request.form["email"],
-        request.form.get("company"),
-        request.form["project"]
-    ))
-
-    conn.commit()
-    conn.close()
-
-    return redirect(url_for("index"))
 
 # Required for Vercel
 app = app
