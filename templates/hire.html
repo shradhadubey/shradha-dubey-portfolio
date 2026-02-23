@@ -89,4 +89,12 @@
     </a>
 </section>
 
+<form method="POST" action="/inquiry" class="mt-4">
+    <input type="text" name="name" placeholder="Full Name" required class="form-control mb-3">
+    <input type="email" name="email" placeholder="Work Email" required class="form-control mb-3">
+    <input type="text" name="company" placeholder="Company Name" class="form-control mb-3">
+    <textarea name="project" placeholder="Describe your infrastructure challenge" rows="6" required class="form-control mb-3"></textarea>
+    <button type="submit" class="btn-primary">Submit Inquiry</button>
+</form>
+
 {% endblock %}
