@@ -29,11 +29,13 @@ def hire():
 
 @app.route("/architecture")
 def architecture():
-    return render_template("architecture.html")
+    profile_data = load_data()
+    return render_template("architecture.html", profile=profile_data)
 
 @app.route("/clients")
 def clients():
-    return render_template("clients.html")
+    profile_data = load_data()
+    return render_template("clients.html", profile=profile_data)
 
 
 # Required for Vercel
