@@ -210,6 +210,21 @@ body::before {
 
 /* Architecture Flow */
 
+.arch-quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ff3c3c;
+    line-height: 1.6;
+}
+
+@media (min-width: 1200px) {
+    .arch-quote {
+        white-space: nowrap;
+    }
+}
+
 .architecture-flow {
     display: flex;
     align-items: center;
