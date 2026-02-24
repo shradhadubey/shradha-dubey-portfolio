@@ -148,8 +148,16 @@ body::before {
 /* Glass Cards */
 
 .glass-card {
-    flex: 1 1 0;
-    min-width: 0;             /* prevents overflow issues */
+    background: rgba(20,20,24,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 50px;
+    transition: 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .glass-card:hover {
@@ -162,12 +170,9 @@ body::before {
 /* Desktop → 4 in one row, Tablet → 2 per row, Mobile → 1 per row */
 
 .services-grid {
-    display: flex;
-    flex-wrap: nowrap;        /* prevents wrapping */
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 30px;
-    overflow-x: auto;         /* allows scroll if needed */
-    padding-bottom: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -221,11 +226,10 @@ body::before {
 
 .architecture-flow {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 40px;
-    max-width: 700px;
-    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .flow-layer {
@@ -264,9 +268,9 @@ body::before {
     
 
 .flow-connector {
-    width: 2px;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, #ff3c3c, transparent);
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, #ff3c3c, transparent);
     animation: pulse 2s infinite;
 }
 
